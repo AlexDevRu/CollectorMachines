@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="Коллекторные_машины.Section121.Item1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Коллекторные_машины"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2.6*"/>
+            <ColumnDefinition Width="0.6*"/>
+            <ColumnDefinition Width="2.6*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+        <Image x:Name="notebook" Source="pack://application:,,,/GlobalResources/images/notebook.png" Grid.ColumnSpan="5" Grid.RowSpan="3"/>
+        <Button x:Name="close" Grid.Column="4" VerticalAlignment="Top" 
+                HorizontalAlignment="Left" Width="50" Height="50"
+                Content="X" Style="{StaticResource close_button}"/>
+
+        <Grid x:Name="image_grid" Grid.Row="1" Grid.Column="1" Panel.ZIndex="3">
+            <Image x:Name="image" Source="pack://siteoforigin:,,,/Sections/1_2/1_2_1/1/image.png"/>
+        </Grid>
+        
+        
+        <ScrollViewer Grid.Row="1" Grid.Column="3" VerticalScrollBarVisibility="Auto" Padding="0 0 8 0">
+            <TextBlock x:Name="content" TextWrapping="Wrap" FontSize="20" TextAlignment="Justify">
+                &#160;&#160;&#160;В настоящее время в основном применяют якорь барабанного типа, в котором проводники 
+                обмотки укладывают в два слоя в пазы, расположенные на наружной поверхности якоря. Обмотка состоит из 
+                отдельных
+                <Span FontWeight="Bold" FontStyle="Italic" Foreground="Blue">
+                секций 
+                S<Run BaselineAlignment="Subscript" FontSize="13">сек</Run>
+                </Span>
+                , которые соединяются между собой. Секция состоит из одного или нескольких витков. 
+                Количество секций соответствует количеству 
+                <Span FontWeight="Bold" FontStyle="Italic" Foreground="Blue">коллекторных пластин К</Span>.
+                    При расчете многослойных обмоток 
+                считают, что 
+                <Span FontWeight="Bold" FontStyle="Italic" Foreground="Blue">
+                    S<Run BaselineAlignment="Subscript" FontSize="13">сек</Run> = К = Z<Run BaselineAlignment="Subscript" FontSize="13">эл</Run>
+                </Span>
+                    , где Z<Run BaselineAlignment="Subscript" FontSize="13">эл</Run> – <Span FontWeight="Bold" FontStyle="Italic">элементарный паз</Span>, под которым понимают паз с двумя активными 
+                сторонами.<LineBreak/>
+&#160;&#160;&#160;Для того чтобы ЭДС, индуцированные в двух сторонах каждого витка, складывались, стороны его 
+                следует располагать под полюсами противоположной полярности.<LineBreak/>
+&#160;&#160;&#160;Часть окружности якоря, приходящаяся на один полюс, или расстояние между средними линиями соседних 
+                разноименных полюсов называется <Hyperlink x:Name="link">полюсным делением τ</Hyperlink>.
+            </TextBlock>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

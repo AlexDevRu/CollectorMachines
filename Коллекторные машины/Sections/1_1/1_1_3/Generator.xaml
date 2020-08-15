@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="Коллекторные_машины.Generator"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Коллекторные_машины"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.3*"/>
+            <ColumnDefinition Width="4.3*"/>
+            <ColumnDefinition Width="0.6*"/>
+            <ColumnDefinition Width="4.1*"/>
+            <ColumnDefinition Width="0.5*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <Image Source="pack://application:,,,/GlobalResources/images/notebook.png" Stretch="Fill" Grid.ColumnSpan="5" Grid.RowSpan="3" Margin="10 0 10 0"/>
+        <Button x:Name="close" Grid.Column="3" VerticalAlignment="Top" 
+                HorizontalAlignment="Right" Width="50" Height="50"
+                Content="X" Style="{StaticResource close_button}"/>
+        <local:VideoPlayer x:Name="video" Grid.Row="1" Grid.Column="1" uri="pack://siteoforigin:,,,/Sections/1_1/1_1_3/video.mp4"/>
+
+
+        <ScrollViewer Grid.Row="1" Grid.Column="3" Padding="0 0 8 0"
+                      VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+                <Image Source="pack://siteoforigin:,,,/Sections/1_1/1_1_3/image.jpg" Width="600"/>
+                <TextBlock x:Name="content" TextWrapping="Wrap" FontSize="20" TextAlignment="Justify">
+                &#160;&#160;&#160;Принцип действия генератора основан на явлении электромагнитной индукции.<LineBreak/>
+&#160;&#160;&#160;На упрощенной модели генератора постоянного тока между магнитными полюсами N и S находится вращающаяся часть генератора – <Span x:Name="time1">якорь</Span>, вал которого посредством шкива и ременной передачи механически связан с приводным двигателем – источником механической энергии.<LineBreak/>
+&#160;&#160;&#160;В двух продольных пазах на сердечнике якоря расположена обмотка в виде одного витка <Span FontStyle="Italic">а, b, c, d</Span>, концы которого присоединены к двум медным изолированным друг от друга <Span x:Name="time2">полукольцам</Span>, образующим простейший коллектор.<LineBreak/>
+&#160;&#160;&#160;На поверхность коллектора наложены <Span x:Name="time3">щетки</Span> <Span FontStyle="Italic">А</Span> и <Span FontStyle="Italic">В</Span>, осуществляющие скользящий контакт с коллектором и связывающие генератор с внешней цепью, куда включена нагрузка сопротивлением R.
+<Span x:Name="time4">Если приводной двигатель вращает якорь генератора против часовой стрелки, то в витке на якоре, вращающемся в магнитном поле постоянного магнита, наводится ЭДС</Span><LineBreak/><LineBreak/>
+<ContentPresenter x:Name="formula"/><LineBreak/><LineBreak/>
+&#160;&#160;&#160;Направление этой ЭДС будет определяться по правилу правой руки.<LineBreak/>
+&#160;&#160;&#160;Так как обмотка ротора замкнута на коллектор, то в обмотке ротора будет протекать ток. Напряжение на выходе генератора будет определяться выражением: <Span FontStyle="Italic">U = E – I<Span BaselineAlignment="Subscript" FontSize="13">Я</Span>R<Span BaselineAlignment="Subscript" FontSize="13">Я</Span></Span>.
+                </TextBlock>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

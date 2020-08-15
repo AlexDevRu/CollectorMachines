@@ -1,0 +1,161 @@
+﻿<Page x:Class="Коллекторные_машины.Theory1_1_1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Коллекторные_машины"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Theory1_1_1">
+
+    <Grid x:Name="grid">
+        <Image Stretch="Fill" Source="pack://application:,,,/GlobalResources/backgrounds/board.jpg"/>
+        <Viewbox>
+            <Canvas Width="680" Height="360">
+                <Button Template="{StaticResource arrow_button}"
+                        Canvas.Left="390" Canvas.Top="40"
+                        ToolTip="Перейти к &quot;Устройство МПТ&quot;"
+                        Height="25" Width="50" Click="Forward"/>
+                <Button Template="{StaticResource arrow_button}"
+                        Canvas.Left="290" Canvas.Top="40"
+                        ToolTip="Перейти к &quot;Принцип действия генератора и двигателя постоянного тока&quot;"
+                        Height="25" Width="50" Click="Back">
+                    <Button.RenderTransform>
+                        <ScaleTransform ScaleX="-1"/>
+                    </Button.RenderTransform>
+                </Button>
+
+                <local:Node x:Name="root" Width="105" Height="90"
+                            Canvas.Left="287.5" Canvas.Top="20"
+                            Title="Основные законы электротехники в применении к теории электрических машин"
+                            MouseDown="ShowChildren"/>
+                <local:Arrow Width="170" Canvas.Left="340" Canvas.Top="65" 
+                             Length="150" Rotate="165"
+                             Visibility="{Binding Visibility, ElementName=l21}"/>
+                <local:Arrow Width="175" Canvas.Left="340" Canvas.Top="55" 
+                             Length="155" Rotate="15"
+                             Visibility="{Binding Visibility, ElementName=l22}"/>
+
+
+
+
+                <local:Node x:Name="l21" Width="100" Height="80"
+                            Canvas.Left="100" Canvas.Top="100"
+                            Title="Электромагнитная индукция (ЭМИ)"
+                            Visibility="Hidden" MouseDown="ShowChildren">
+                    <local:Node.ToolTip>
+                        <TextBlock FontSize="20" Width="200" TextWrapping="Wrap">
+                                    <Span FontWeight="Bold" Foreground="Blue">Электромагнитная индукция (ЭМИ)</Span> – это явление возникновения ЭДС в проводнике или контуре под действием магнитного поля.
+                        </TextBlock>
+                    </local:Node.ToolTip>
+                </local:Node>
+                <local:Arrow Width="85" Canvas.Left="155" Canvas.Top="175" 
+                             Length="65" Rotate="145"
+                             Visibility="{Binding Visibility, ElementName=l31}"/>
+                <local:Arrow Width="80" Canvas.Left="153" Canvas.Top="170" 
+                             Length="60" Rotate="90"
+                             Visibility="{Binding Visibility, ElementName=l32}"/>
+                <local:Arrow Width="135" Canvas.Left="150" Canvas.Top="168" 
+                             Length="115" Rotate="15"
+                             Visibility="{Binding Visibility, ElementName=l33}"/>
+
+                <local:Node x:Name="l22" Width="100" Height="80"
+                            Canvas.Left="480" Canvas.Top="100"
+                            Title="Действие электромагнитной силы на контур с током"
+                            Visibility="Hidden" MouseDown="ShowChildren"/>
+                <local:Arrow Width="85" Canvas.Left="535" Canvas.Top="175" 
+                             Length="45" Rotate="115"
+                             Visibility="{Binding Visibility, ElementName=l34}"/>
+                <local:Arrow Width="85" Canvas.Left="535" Canvas.Top="170" 
+                             Length="45" Rotate="60"
+                             Visibility="{Binding Visibility, ElementName=l35}"/>
+                <local:Arrow Width="120" Canvas.Left="537" Canvas.Top="175" 
+                             Length="100" Rotate="100"
+                             Visibility="{Binding Visibility, ElementName=l36}"/>
+                <local:Arrow Width="120" Canvas.Left="535" Canvas.Top="170" 
+                             Length="105" Rotate="75"
+                             Visibility="{Binding Visibility, ElementName=l37}"/>
+
+
+
+
+                <local:Node x:Name="l31" Width="90" Height="70"
+                            Canvas.Left="10" Canvas.Top="180"
+                            Text="2/text.txt" Image="2/image.png"
+                            Title="Механизм возникновения ЭМИ"
+                            Visibility="Hidden" MouseDown="ShowInfo"/>
+                <local:Node x:Name="l32" Width="70" Height="70"
+                            Canvas.Left="115" Canvas.Top="240"
+                            Text="3/text.txt" Image="3/image.jpg"
+                            Title="Правило правой руки"
+                            Visibility="Hidden" MouseDown="ShowInfo"/>
+                <local:Node x:Name="l33" Width="100" Height="80"
+                            Canvas.Left="260" Canvas.Top="165"
+                            Title="Закон электромагнитной индукции для контура"
+                            Visibility="Hidden" MouseDown="ShowChildren">
+                    <local:Node.ToolTip>
+                        <TextBlock FontSize="20" 
+                                       TextWrapping="Wrap" 
+                                       Width="400"
+                                       Text="Электродвижущая сила, индуктируемая в замкнутом контуре при изменении сцепленного с ним магнитного потока, прямо пропорциональная скорости изменения магнитного потока, взятой с отрицательным знаком."/>
+                    </local:Node.ToolTip>
+                </local:Node>
+                <local:Arrow Width="85" Canvas.Left="315" Canvas.Top="240" 
+                             Length="65" Rotate="152"
+                             Visibility="{Binding Visibility, ElementName=l41}"/>
+                <local:Arrow Width="50" Canvas.Left="315" Canvas.Top="235" 
+                             Length="30" Rotate="90"
+                             Visibility="{Binding Visibility, ElementName=l42}"/>
+                <local:Arrow Width="85" Canvas.Left="313" Canvas.Top="234" 
+                             Length="65" Rotate="28"
+                             Visibility="{Binding Visibility, ElementName=l43}"/>
+
+
+
+
+                <local:Node x:Name="l41" Width="100" Height="80"
+                            Canvas.Left="185" Canvas.Top="270"
+                            TitleSize="6"
+                            Text="5/text.txt"
+                            Title="Математическое выражение закона электромагнитной индукции для проводника"
+                            Visibility="Hidden" MouseDown="ShowInfo"/>
+                <local:Node x:Name="l42" Width="70" Height="70"
+                            Canvas.Left="277" Canvas.Top="275"
+                            Text="6/text.txt"
+                            Title="Правило Ленца"
+                            Visibility="Hidden" MouseDown="ShowInfo"/>
+                <local:Node x:Name="l43" Width="100" Height="70"
+                            Canvas.Left="335" Canvas.Top="275"
+                            Text="7/text.txt"
+                            Title="Область применения"
+                            Visibility="Hidden" MouseDown="ShowInfo"/>
+
+
+
+
+                <local:Node x:Name="l34" Width="70" Height="70"
+                            Canvas.Left="435" Canvas.Top="190"
+                            Title="Сущность явления"
+                            Visibility="Hidden"/>
+
+                <local:Node x:Name="l35" Width="70" Height="70"
+                            Canvas.Left="560" Canvas.Top="190"
+                            Text="9/text.txt" Image="9/image.jpg"
+                            Title="Правило левой руки"
+                            Visibility="Hidden" MouseDown="ShowInfo"/>
+
+                <local:Node x:Name="l36" Width="100" Height="80"
+                            Canvas.Left="420" Canvas.Top="270"
+                            Size="40"
+                            Text="10/text.txt"
+                            Title="Математическое выражение  для определения вращающего момента"
+                            Visibility="Hidden" MouseDown="ShowInfo"/>
+                <local:Node x:Name="l37" Width="70" Height="70"
+                            Canvas.Left="560" Canvas.Top="275"
+                            Text="11/text.txt"
+                            Title="Область применения"
+                            Visibility="Hidden" MouseDown="ShowInfo"/>
+            </Canvas>
+        </Viewbox>
+    </Grid>
+</Page>

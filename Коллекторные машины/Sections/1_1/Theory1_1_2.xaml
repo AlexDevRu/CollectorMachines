@@ -1,0 +1,283 @@
+﻿<Page x:Class="Коллекторные_машины.Theory1_1_2"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:Коллекторные_машины"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Theory1_1_2">
+
+    <Page.Resources>
+        <BitmapImage x:Key="info" UriSource="pack://application:,,,/GlobalResources/Icons/info.png"/>
+        <BitmapImage x:Key="video" UriSource="pack://siteoforigin:,,,/Sections/1_1/1_1_2/Icons/video.png"/>
+        <BitmapImage x:Key="heart" UriSource="pack://siteoforigin:,,,/Sections/1_1/1_1_2/Icons/heart.png"/>
+        <BitmapImage x:Key="winding" UriSource="pack://siteoforigin:,,,/Sections/1_1/1_1_2/Icons/winding.png"/>
+        <BitmapImage x:Key="loop" UriSource="pack://siteoforigin:,,,/Sections/1_1/1_1_2/Icons/loop.png"/>
+        <BitmapImage x:Key="wave" UriSource="pack://siteoforigin:,,,/Sections/1_1/1_1_2/Icons/wave.png"/>
+        <BitmapImage x:Key="combination" UriSource="pack://siteoforigin:,,,/Sections/1_1/1_1_2/Icons/combination.png"/>
+    </Page.Resources>
+
+
+    <Grid x:Name="grid">
+        <Image Stretch="Fill" Source="pack://application:,,,/GlobalResources/backgrounds/board.jpg"/>
+        <Viewbox>
+            <Canvas Width="680" Height="360">
+                <Button Template="{StaticResource arrow_button}"
+                        Canvas.Left="380" Canvas.Top="40"
+                        ToolTip="Перейти к &quot;Принцип действия генератора и двигателя постоянного тока&quot;"
+                        Height="25" Width="50" Click="Forward"/>
+                <Button Template="{StaticResource arrow_button}"
+                        Canvas.Left="300" Canvas.Top="40"
+                        ToolTip="Перейти к &quot;Основные законы электротехники в применении к теории электрических машин&quot;"
+                        Height="25" Width="50" Click="Back">
+                    <Button.RenderTransform>
+                        <ScaleTransform ScaleX="-1"/>
+                    </Button.RenderTransform>
+                </Button>
+
+
+                <local:Node x:Name="root" Width="70" Height="70"
+                            Canvas.Left="305" Canvas.Top="20"
+                            Title="Машина постоянного тока (МПТ)"
+                            MouseDown="ShowChildren"/>
+                <Image x:Name="iroot1" Width="20" Height="20"
+                       Canvas.Left="320" Canvas.Top="70" Panel.ZIndex="2"
+                       Source="pack://application:,,,/GlobalResources/Icons/pict.png"
+                       MouseDown="OpenImage"
+                       ToolTip="плакат &#34;Двигатель постоянного тока&#34;"
+                       Visibility="{Binding Visibility,ElementName=root}"/>
+
+                <local:Node x:Name="iroot2" Width="20" Height="20"
+                            Canvas.Left="340" Canvas.Top="70"
+                            Picture="{StaticResource video}"
+                            ToolTip="флеш-анимация &#34;Устройство машины постоянного тока&#34;"
+                            Text="1\flash1.swf" MouseDown="OpenVideo"
+                            Visibility="{Binding Visibility,ElementName=root}"/>
+                
+                
+                <local:Arrow Width="170" Canvas.Left="340" Canvas.Top="65" 
+                             Length="150" Rotate="163"
+                             Visibility="{Binding Visibility, ElementName=l21}"/>
+                <local:Arrow Width="170" Canvas.Left="340" Canvas.Top="55" 
+                             Length="150" Rotate="17"
+                             Visibility="{Binding Visibility, ElementName=l22}"/>
+
+
+
+                <local:Node x:Name="l21" Width="70" Height="70"
+                            Canvas.Left="130" Canvas.Top="110"
+                            Title="Статор (индуктор) МПТ"
+                            Visibility="Hidden" MouseDown="ShowChildren">
+                    <local:Node.ToolTip>
+                        <TextBlock FontSize="20"><Span FontWeight="Bold" Foreground="Blue">Статор</Span> - неподвижная часть машины</TextBlock>
+                    </local:Node.ToolTip>
+                </local:Node>
+                <Image x:Name="i211" Width="20" Height="20"
+                       Canvas.Left="145" Canvas.Top="160" Panel.ZIndex="2"
+                       Source="pack://application:,,,/GlobalResources/Icons/pict.png"
+                       MouseDown="OpenImage"
+                       ToolTip="плакат &#34;Индуктор машины постоянного тока&#34;"
+                       Visibility="{Binding Visibility,ElementName=l21}"/>
+                <local:Node Width="20" Height="20"
+                            Canvas.Left="165" Canvas.Top="160"
+                            Image="6/image.jpg"
+                            Picture="{StaticResource info}" 
+                            MouseDown="ShowInfo"
+                            Visibility="{Binding Visibility,ElementName=l21}"/>
+                <local:Arrow Width="70" Canvas.Left="170" Canvas.Top="175" 
+                             Length="50" Rotate="125"
+                             Visibility="{Binding Visibility, ElementName=l31}"/>
+                <local:Arrow Width="70" Canvas.Left="170" Canvas.Top="170" 
+                             Length="50" Rotate="55"
+                             Visibility="{Binding Visibility, ElementName=l32}"/>
+                <local:Arrow Width="130" Canvas.Left="170" Canvas.Top="175" 
+                             Length="110" Rotate="105"
+                             Visibility="{Binding Visibility, ElementName=l33}"/>
+                <local:Arrow Width="130" Canvas.Left="170" Canvas.Top="170" 
+                             Length="110" Rotate="75"
+                             Visibility="{Binding Visibility, ElementName=l34}"/>
+
+
+
+                <local:Node x:Name="l22" Width="70" Height="70"
+                            Canvas.Left="480" Canvas.Top="110"
+                            Title="Ротор (якорь) МПТ"
+                            Visibility="Hidden" MouseDown="ShowChildren">
+                    <local:Node.ToolTip>
+                        <TextBlock FontSize="20"><Span FontWeight="Bold" Foreground="Blue">Якорь</Span> - подвижная часть машины</TextBlock>
+                    </local:Node.ToolTip>
+                </local:Node>
+                <Image x:Name="i221" Width="20" Height="20"
+                       Canvas.Left="495" Canvas.Top="160" Panel.ZIndex="2"
+                       Source="pack://application:,,,/GlobalResources/Icons/pict.png"
+                       MouseDown="OpenImage"
+                       ToolTip="плакат &#34;Якорь машины постоянного тока&#34;"
+                       Visibility="{Binding Visibility,ElementName=l22}"/>
+                <local:Node x:Name="i222" Width="20" Height="20"
+                            Canvas.Left="515" Canvas.Top="160"
+                            Image="5/image.jpg"
+                            MouseDown="ShowInfo"
+                            Picture="{StaticResource info}"
+                            Visibility="{Binding Visibility,ElementName=l22}"/>
+                <local:Arrow Width="70" Canvas.Left="520" Canvas.Top="175" 
+                             Length="50" Rotate="125"
+                             Visibility="{Binding Visibility, ElementName=l35}"/>
+                <local:Arrow Width="70" Canvas.Left="520" Canvas.Top="170" 
+                             Length="50" Rotate="55"
+                             Visibility="{Binding Visibility, ElementName=l36}"/>
+                <local:Arrow Width="130" Canvas.Left="520" Canvas.Top="175" 
+                             Length="110" Rotate="105"
+                             Visibility="{Binding Visibility, ElementName=l37}"/>
+                <local:Arrow Width="130" Canvas.Left="520" Canvas.Top="170" 
+                             Length="110" Rotate="73"
+                             Visibility="{Binding Visibility, ElementName=l38}"/>
+                
+                
+                
+                
+
+                <local:Node x:Name="l31" Width="70" Height="70"
+                            Canvas.Left="60" Canvas.Top="190"
+                            Title="Корпус МПТ"
+                            Text="7/text.txt"
+                            MouseDown="ShowInfo"
+                            Visibility="Hidden"/>
+                <local:Node x:Name="l32" Width="70" Height="70"
+                            Canvas.Left="200" Canvas.Top="190"
+                            Title="Щетки"
+                            Visibility="Hidden"/>
+
+                <local:Node x:Name="i321" Width="20" Height="20"
+                            Canvas.Left="198" Canvas.Top="240"
+                            Picture="{StaticResource info}"
+                            Visibility="{Binding Visibility,ElementName=l32}"/>
+
+                <local:Node x:Name="i322" Width="20" Height="20"
+                            Canvas.Left="216" Canvas.Top="240"
+                            Picture="{StaticResource video}"
+                            ToolTip="флеш-анимация &#34;Щеточный аппарат&#34;"
+                            Text="15/flash.swf" MouseDown="OpenVideo"
+                            Visibility="{Binding Visibility,ElementName=l32}"/>
+
+                <local:Node x:Name="i323" Width="20" Height="20"
+                            Canvas.Left="234" Canvas.Top="240"
+                            Picture="{StaticResource video}"
+                            ToolTip="флеш-анимация &#34;Щеткодержатель&#34;"
+                            Text="16/flash.swf" MouseDown="OpenVideo"
+                            Visibility="{Binding Visibility,ElementName=l32}"/>
+
+                <local:Node x:Name="i324" Width="20" Height="20"
+                            Canvas.Left="252" Canvas.Top="240"
+                            Picture="{StaticResource video}"
+                            ToolTip="флеш-анимация &#34;Щетки&#34;"
+                            Text="1\flash2.swf" MouseDown="OpenVideo"
+                            Visibility="{Binding Visibility,ElementName=l32}"/>
+
+                <local:Node x:Name="l33" Width="70" Height="70"
+                            Canvas.Left="60" Canvas.Top="270"
+                            Title="Главные магнитные полюсы"
+                            Visibility="Hidden"/>
+                <local:Node x:Name="i331" Width="20" Height="20"
+                            Canvas.Left="67" Canvas.Top="320"
+                            Picture="{StaticResource info}"
+                            Visibility="{Binding Visibility,ElementName=l33}"/>
+                <local:Node x:Name="i332" Width="20" Height="20"
+                            Canvas.Left="87" Canvas.Top="320"
+                            ToolTip="Сердечник главных магнитных полюсов"
+                            Picture="{StaticResource heart}"
+                            Visibility="{Binding Visibility,ElementName=l33}"/>
+                <local:Node x:Name="i333" Width="20" Height="20"
+                            Canvas.Left="107" Canvas.Top="320"
+                            Text="11/text.txt" Image="11/image.jpg"
+                            MouseDown="ShowInfo"
+                            ToolTip="Обмотка возбуждения"
+                            Picture="{StaticResource winding}"
+                            Visibility="{Binding Visibility,ElementName=l33}"/>
+
+                <local:Node x:Name="l34" Width="95" Height="75"
+                            Canvas.Left="187.5" Canvas.Top="270"
+                            Title="Дополнительные магнитные полюсы"
+                            Visibility="Hidden"/>
+
+                <local:Node x:Name="i341" Width="20" Height="20"
+                            Canvas.Left="205" Canvas.Top="323"
+                            Picture="{StaticResource info}"
+                            Visibility="{Binding Visibility,ElementName=l34}"/>
+                <local:Node Width="20" Height="20"
+                            Canvas.Left="225" Canvas.Top="323"
+                            Text="12/text.txt" Image="12/image.png"
+                            MouseDown="ShowInfo"
+                            ToolTip="Сердечник дополнительных магнитных полюсов"
+                            Picture="{StaticResource heart}"
+                            Visibility="{Binding Visibility,ElementName=l34}"/>
+                <local:Node Width="20" Height="20"
+                            Canvas.Left="245" Canvas.Top="323"
+                            Text="13/text.txt" Image="13/image.png"
+                            MouseDown="ShowInfo"
+                            ToolTip="Обмотка дополнительных магнитных полюсов"
+                            Picture="{StaticResource winding}"
+                            Visibility="{Binding Visibility,ElementName=l34}"/>
+
+                <local:Node x:Name="l35" Width="70" Height="70"
+                            Canvas.Left="410" Canvas.Top="190"
+                            Title="Вал"
+                            Text="17/text.txt" Image="17/image.png"
+                            MouseDown="ShowInfo"
+                            Visibility="Hidden"/>
+
+                <local:Node x:Name="l36" Width="70" Height="70"
+                            Canvas.Left="550" Canvas.Top="190"
+                            Title="Коллектор"
+                            Visibility="Hidden"/>
+                <Image x:Name="i361" Width="20" Height="20"
+                       Canvas.Left="565" Canvas.Top="240" Panel.ZIndex="2"
+                       Source="pack://application:,,,/GlobalResources/Icons/pict.png"
+                       MouseDown="OpenImage"
+                       ToolTip="плакат &#34;Коллектор&#34;"
+                       Visibility="{Binding Visibility,ElementName=l36}"/>
+                <local:Node x:Name="i362" Width="20" Height="20"
+                            Canvas.Left="585" Canvas.Top="240"
+                            Picture="{StaticResource info}"
+                            Visibility="{Binding Visibility,ElementName=l36}"/>
+
+                <local:Node x:Name="l37" Width="70" Height="70"
+                            Canvas.Left="410" Canvas.Top="270"
+                            Title="Обмотка якоря"
+                            Visibility="Hidden"/>
+                <local:Node x:Name="i371" Width="20" Height="20"
+                            Canvas.Left="410" Canvas.Top="320"
+                            Picture="{StaticResource info}"
+                            Visibility="{Binding Visibility,ElementName=l37}"/>
+                <local:Node x:Name="i372" Width="20" Height="20"
+                            Canvas.Left="428" Canvas.Top="320"
+                            Text="7/text.txt" Image="7/image.png"
+                            MouseDown="ShowInfo"
+                            Picture="{StaticResource loop}"
+                            ToolTip="Петлевая обмотка"
+                            Visibility="{Binding Visibility,ElementName=l37}"/>
+                <local:Node x:Name="i373" Width="20" Height="20"
+                            Canvas.Left="446" Canvas.Top="320"
+                            Text="13/text.txt" Image="13/image.png"
+                            MouseDown="ShowInfo"
+                            Picture="{StaticResource wave}"
+                            ToolTip="Волновая обмотка"
+                            Visibility="{Binding Visibility,ElementName=l37}"/>
+                <local:Node x:Name="i374" Width="20" Height="20"
+                            Canvas.Left="464" Canvas.Top="320"
+                            Text="17/text.txt" Image="17/image.png"
+                            MouseDown="ShowInfo"
+                            Picture="{StaticResource combination}"
+                            ToolTip="Комбинированная обмотка"
+                            Visibility="{Binding Visibility,ElementName=l37}"/>
+
+                <local:Node x:Name="l38" Width="70" Height="70"
+                            Canvas.Left="550" Canvas.Top="270"
+                            Title="Сердечник якоря"
+                            Text="18/text.txt" Image="18/image.png"
+                            MouseDown="ShowInfo"
+                            Visibility="Hidden"/>
+            </Canvas>
+        </Viewbox>
+    </Grid>
+</Page>

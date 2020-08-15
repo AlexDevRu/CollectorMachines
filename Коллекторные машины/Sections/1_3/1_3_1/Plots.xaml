@@ -1,0 +1,290 @@
+﻿<UserControl x:Class="Коллекторные_машины.Plots"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Коллекторные_машины"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="99*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="99*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Image Source="pack://application:,,,/GlobalResources/images/list.png" 
+               Stretch="Fill" Grid.Column="1" Grid.Row="1" Margin="0 -50 0 -50"/>
+        <Button x:Name="close" Grid.Column="1" Grid.Row="1" VerticalAlignment="Top" 
+                HorizontalAlignment="Right" Width="50" Height="50"
+                Content="X" Style="{StaticResource close_button}"/>
+
+
+        <Viewbox x:Name="viewbox" Grid.Row="1" Grid.Column="1">
+            <Canvas Width="2100" Height="900">
+                <Image Source="pack://siteoforigin:,,,/Sections/1_3/1_3_1/1/image.png" Canvas.Left="400"
+                       />
+
+                <Canvas ToolTip="Осевая длина ярма">
+                    <Path Stroke="Red" StrokeThickness="6"
+                      Canvas.Left="700" Canvas.Top="60" 
+                      RenderTransformOrigin="0.5,0.5">
+                        <Path.Data>
+                            <PathGeometry>
+                                <PathFigure StartPoint="20,150">
+                                    <ArcSegment Point="680,150" Size="200,100"/>
+                                </PathFigure>
+                            </PathGeometry>
+                        </Path.Data>
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="180"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                    </Path>
+                    <Line X1="703" Y1="227"
+                      X2="740" Y2="255"
+                      Stroke="Red" StrokeThickness="6"/>
+                    <Polygon Fill="Red" StrokeThickness="6"
+                             Canvas.Left="725" Canvas.Top="240"
+                             Points="0,18 20,20 15,0"/>
+
+
+                    <Line X1="1364" Y1="227"
+                      X2="1327" Y2="255"
+                      Stroke="Red" StrokeThickness="6"/>
+                    <Polygon Fill="Red" StrokeThickness="6"
+                             Canvas.Left="1320" Canvas.Top="240"
+                             Points="5,0 20,18 0,20"/>
+
+                    <TextBlock Canvas.Left="1020" Canvas.Top="60" FontSize="30" Foreground="Red">
+                        L<Span BaselineAlignment="Subscript" FontSize="20">яр</Span>
+                    </TextBlock>
+                </Canvas>
+
+                <Canvas ToolTip="Сердечник полюса">
+                    <Line X1="750" Y1="265"
+                              X2="807" Y2="313"
+                              Stroke="Green" StrokeThickness="6"/>
+                    <Polygon Fill="Green" StrokeThickness="6"
+                             Canvas.Left="789" Canvas.Top="295"
+                             Points="0,18 20,20 15,0"/>
+                    <Polygon Fill="Green" StrokeThickness="6"
+                             Canvas.Left="744" Canvas.Top="259"
+                             Points="0,18 20,20 15,0" Height="21" RenderTransformOrigin="0.5,0.5" Width="20">
+                        <Polygon.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleY="-1" ScaleX="-1"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Polygon.RenderTransform>
+                    </Polygon>
+
+
+                    <Line X1="1340" Y1="265"
+                          X2="1288" Y2="313"
+                          Stroke="Green" StrokeThickness="6" Canvas.Left="-24" Canvas.Top="-1"/>
+                    <Polygon Fill="Green" StrokeThickness="6"
+                             Canvas.Left="1300" Canvas.Top="259"
+                             Points="0,18 20,20 15,0" Height="21" RenderTransformOrigin="0.5,0.5" Width="29">
+                        <Polygon.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleY="-1"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Polygon.RenderTransform>
+                    </Polygon>
+                    <Polygon Fill="Green" StrokeThickness="6"
+                             Canvas.Left="1253" Canvas.Top="302"
+                             Points="0,18 20,20 15,0" Height="21" RenderTransformOrigin="0.5,0.5" Width="20">
+                        <Polygon.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleY="-1" ScaleX="-1"/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="-85.287"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Polygon.RenderTransform>
+                    </Polygon>
+
+                    <TextBlock Canvas.Left="771" Canvas.Top="240" FontSize="30" Foreground="Green">
+                        h<Span BaselineAlignment="Subscript" FontSize="20">п</Span>
+                    </TextBlock>
+                    <TextBlock Canvas.Left="1261" Canvas.Top="240" FontSize="30" Foreground="Green">
+                        h<Span BaselineAlignment="Subscript" FontSize="20">п</Span>
+                    </TextBlock>
+                </Canvas>
+
+
+                <Canvas ToolTip="Зубцовый слой якоря">
+                    <Canvas Canvas.Left="80" Canvas.Top="100">
+                        <Line X1="750" Y1="265"
+                              X2="780" Y2="293"
+                              Stroke="Yellow" StrokeThickness="6" Canvas.Left="-5" Canvas.Top="7"/>
+                        <Polygon Fill="Yellow" StrokeThickness="6"
+                             Canvas.Left="763" Canvas.Top="286"
+                             Points="0,18 20,20 15,0"/>
+                        <Polygon Fill="Yellow" StrokeThickness="6"
+                             Canvas.Left="739" Canvas.Top="267"
+                             Points="0,18 20,20 15,0" Height="21" RenderTransformOrigin="0.5,0.5" Width="20">
+                            <Polygon.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleY="-1" ScaleX="-1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Polygon.RenderTransform>
+                        </Polygon>
+
+                    </Canvas>
+
+                    <Canvas Canvas.Left="86" Canvas.Top="109">
+                        <Line X1="1168" Y1="296"
+                              X2="1135" Y2="321"
+                              Stroke="Yellow" StrokeThickness="6"/>
+                        <Polygon Fill="Yellow" StrokeThickness="6"
+                             Canvas.Left="1131" Canvas.Top="307"
+                             Points="0,18 20,20 15,0" Height="21" RenderTransformOrigin="0.5,0.5" Width="20">
+                            <Polygon.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleY="-1" ScaleX="-1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="-80.386"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Polygon.RenderTransform>
+                        </Polygon>
+                        <Polygon Fill="Yellow" StrokeThickness="6"
+                             Canvas.Left="1153" Canvas.Top="291"
+                             Points="0,18 20,20 15,0" Height="21" RenderTransformOrigin="0.11,0.824" Width="29">
+                            <Polygon.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleY="-1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform Y="-13.608"/>
+                                </TransformGroup>
+                            </Polygon.RenderTransform>
+                        </Polygon>
+                    </Canvas>
+
+                    <TextBlock Canvas.Left="839" Canvas.Top="346" FontSize="30" Foreground="Yellow" RenderTransformOrigin="0.5,0.5">
+                        <TextBlock.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="-41"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </TextBlock.RenderTransform>
+                        h<Span BaselineAlignment="Subscript" FontSize="20">z</Span>
+                    </TextBlock>
+
+                    <TextBlock Canvas.Left="1219" Canvas.Top="376" FontSize="30" Foreground="Yellow" RenderTransformOrigin="0.5,0.5">
+                        <TextBlock.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="41"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </TextBlock.RenderTransform>
+                        h<Span BaselineAlignment="Subscript" FontSize="20">z</Span>
+                    </TextBlock>
+                </Canvas>
+
+
+                <Canvas ToolTip="Спинка якоря">
+                    <Canvas Canvas.Left="120" Canvas.Top="147">
+                        <Line X1="750" Y1="265"
+                              X2="780" Y2="293"
+                              Stroke="Blue" StrokeThickness="6"/>
+                        <Polygon Fill="Blue" StrokeThickness="6"
+                             Canvas.Left="744" Canvas.Top="259"
+                             Points="0,18 20,20 15,0" Height="21" RenderTransformOrigin="0.5,0.5" Width="20">
+                            <Polygon.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleY="-1" ScaleX="-1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Polygon.RenderTransform>
+                        </Polygon>
+                    </Canvas>
+                    <Canvas Canvas.Left="43" Canvas.Top="143">
+                        <Line X1="1168" Y1="296"
+                              X2="1135" Y2="321"
+                              Stroke="Blue" StrokeThickness="6"/>
+                        <Polygon Fill="Blue" StrokeThickness="6"
+                             Canvas.Left="1153" Canvas.Top="291"
+                             Points="0,18 20,20 15,0" Height="21" RenderTransformOrigin="0.11,0.824" Width="29">
+                            <Polygon.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleY="-1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform Y="-13.608"/>
+                                </TransformGroup>
+                            </Polygon.RenderTransform>
+                        </Polygon>
+                    </Canvas>
+
+                    <Line X1="903" Y1="433" X2="1185" Y2="457" Stroke="Blue" StrokeThickness="6" Canvas.Left="-5" Canvas.Top="6"/>
+
+                    <TextBlock Canvas.Left="1017" Canvas.Top="450" FontSize="30" Foreground="Blue">
+                        L<Span BaselineAlignment="Subscript" FontSize="20">я</Span>
+                    </TextBlock>
+                </Canvas>
+
+
+                <Canvas ToolTip="Высота спинки якоря">
+                    <Line X1="1105" Y1="600"
+                              X2="1250" Y2="600"
+                              Stroke="Purple" StrokeThickness="6"/>
+                    <Polygon Fill="Purple" StrokeThickness="6"
+                             Canvas.Left="1092" Canvas.Top="592"
+                             Points="0,7.5 15,0 15,15"/>
+                    <Polygon Fill="Purple" StrokeThickness="6"
+                             Canvas.Left="1245" Canvas.Top="592"
+                             Points="0,0 15 7.5 0,15" Height="21" Width="20"/>
+
+                    <TextBlock Canvas.Left="1166" Canvas.Top="597" FontSize="30" Foreground="Purple">
+                        h<Span BaselineAlignment="Subscript" FontSize="20">я</Span>
+                    </TextBlock>
+                </Canvas>
+
+
+                <Canvas ToolTip="Воздушный зазор">
+                    <TextBlock Canvas.Left="650" Canvas.Top="450" FontSize="60" Foreground="DarkBlue" Text="δ"/>
+                    <TextBlock Canvas.Left="1000" Canvas.Top="160" FontSize="60" Foreground="DarkBlue" Text="δ"/>
+                    <TextBlock Canvas.Left="1350" Canvas.Top="450" FontSize="60" Foreground="DarkBlue" Text="δ"/>
+                </Canvas>
+
+
+                <TextBlock FontSize="30" Width="1050" Canvas.Bottom="0" 
+                           Canvas.Left="500" TextWrapping="Wrap" 
+                           TextAlignment="Justify">
+                    <Span Foreground="Blue" FontWeight="Bold">Магнитная цепь</Span> – это путь, 
+                    по которому замыкаются магнитные силовые линии 
+                    основного магнитного потока. Магнитная цепь машины состоит из главных полюсов, сердечника якоря, 
+                    воздушного зазора между полюсами и якорем и ярма (корпуса).
+                </TextBlock>
+            </Canvas>
+        </Viewbox>
+    </Grid>
+</UserControl>

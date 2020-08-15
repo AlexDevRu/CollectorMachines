@@ -1,0 +1,240 @@
+﻿<Page x:Class="Коллекторные_машины.Theory1_6_5"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:Коллекторные_машины"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Theory1_6_5">
+
+    <Page.Resources>
+        <BitmapImage x:Key="info" UriSource="pack://application:,,,/GlobalResources/Icons/info.png"/>
+        <BitmapImage x:Key="bearing" UriSource="pack://siteoforigin:,,,/Sections/1_6/1_6_5/Icons/bearing.png"/>
+        <BitmapImage x:Key="brush" UriSource="pack://siteoforigin:,,,/Sections/1_6/1_6_5/Icons/brush.png"/>
+        <BitmapImage x:Key="ventilation" UriSource="pack://siteoforigin:,,,/Sections/1_6/1_6_5/Icons/ventilation.png"/>
+        <BitmapImage x:Key="hysteresis" UriSource="pack://siteoforigin:,,,/Sections/1_6/1_6_5/Icons/hysteresis.png"/>
+        <BitmapImage x:Key="electro" UriSource="pack://siteoforigin:,,,/Sections/1_6/1_6_5/Icons/electro.png"/>
+        <BitmapImage x:Key="winding" UriSource="pack://siteoforigin:,,,/Sections/1_1/1_1_2/Icons/winding.png"/>
+        <BitmapImage x:Key="winding2" UriSource="pack://siteoforigin:,,,/Sections/1_6/1_6_5/Icons/winding2.png"/>
+    </Page.Resources>
+
+    <Grid x:Name="grid">
+        <Image Stretch="Fill" Source="pack://application:,,,/GlobalResources/backgrounds/board.jpg"/>
+        <Viewbox>
+            <Canvas Width="680" Height="360">
+                <Button Template="{StaticResource arrow_button}"
+                        Canvas.Left="385" Canvas.Top="40"
+                        ToolTip="Перейти к &quot;Способы регулирования частоты вращения&quot;"
+                        Height="25" Width="50" Click="Forward"/>
+                <Button Template="{StaticResource arrow_button}"
+                        Canvas.Left="295" Canvas.Top="40"
+                        ToolTip="Перейти к &quot;Режимы работы машины постоянного тока&quot;"
+                        Height="25" Width="50" Click="Back">
+                    <Button.RenderTransform>
+                        <ScaleTransform ScaleX="-1"/>
+                    </Button.RenderTransform>
+                </Button>
+
+
+
+                <local:Node x:Name="root" Width="90" Height="80"
+                            Canvas.Left="295" Canvas.Top="20"
+                            Title="Потери мощности в машине постоянного тока" MouseDown="ShowChildren">
+                    <local:Node.ToolTip>
+                        <TextBlock TextWrapping="Wrap" Margin="5" Width="300" FontSize="20">
+                                <Span Foreground="Blue" FontWeight="Bold">Потери мощности ΣР</Span> – это часть потребляемой машиной постоянного тока энергии, которая теряется бесполезно и рассеивается в виде тепла.
+                        </TextBlock>
+                    </local:Node.ToolTip>
+                </local:Node>
+                <local:Arrow Width="180" Canvas.Left="340" Canvas.Top="57" 
+                             Length="160" Rotate="157"
+                             Visibility="{Binding Visibility, ElementName=l21}"/>
+                <local:Arrow Width="65" Canvas.Left="310" Canvas.Top="65" 
+                             Length="45" Rotate="120"
+                             Visibility="{Binding Visibility, ElementName=l22}"/>
+                <local:Arrow Width="62" Canvas.Left="380" Canvas.Top="62" 
+                             Length="42" Rotate="60"
+                             Visibility="{Binding Visibility, ElementName=l23}"/>
+                <local:Arrow Width="185" Canvas.Left="340" Canvas.Top="45" 
+                             Length="165" Rotate="23"
+                             Visibility="{Binding Visibility, ElementName=l24}"/>
+
+
+
+                <local:Node x:Name="l21" Title="Основные потери"
+                            Width="70" Height="70"
+                            Canvas.Left="110" Canvas.Top="110"
+                            Visibility="Hidden" MouseDown="ShowChildren">
+                    <local:Node.ToolTip>
+                        <TextBlock TextWrapping="Wrap" Margin="5" Width="300" FontSize="20">
+                                <Span Foreground="Blue" FontWeight="Bold">Основные потери Р</Span><Span BaselineAlignment="Subscript" FontSize="13" FontWeight="Bold" Foreground="Blue">o</Span> возникают в результате происходящих в машине основных электромагнитных и механических процессов.
+                        </TextBlock>
+                    </local:Node.ToolTip>
+                </local:Node>
+                <local:Arrow Width="70" Canvas.Left="150" Canvas.Top="175" 
+                             Length="50" Rotate="120"
+                             Visibility="{Binding Visibility, ElementName=l31}"/>
+                <local:Arrow Width="110" Canvas.Left="150" Canvas.Top="175" 
+                             Length="90" Rotate="90"
+                             Visibility="{Binding Visibility, ElementName=l32}"/>
+                <local:Arrow Width="70" Canvas.Left="150" Canvas.Top="172" 
+                             Length="50" Rotate="60"
+                             Visibility="{Binding Visibility, ElementName=l33}"/>
+
+                <local:Node x:Name="l22" Title="КПД генератора постоянного тока" 
+                            Width="70" Height="70"
+                            Canvas.Left="240" Canvas.Top="110"
+                            Size="18"
+                            Text="15/text.txt"
+                            MouseDown="ShowInfo"
+                            Visibility="Hidden"/>
+
+                <local:Node x:Name="l23" Title="КПД двигателя постоянного тока"
+                            Width="70" Height="70"
+                            Canvas.Left="370" Canvas.Top="110"
+                            Text="16/text.txt"
+                            MouseDown="ShowInfo"
+                            Visibility="Hidden"/>
+
+                <local:Node x:Name="l24" Title="Добавочные потери"
+                            Width="70" Height="70"
+                            Canvas.Left="500" Canvas.Top="110"
+                            Visibility="Hidden" MouseDown="ShowChildren"/>
+                <local:Node Picture="{StaticResource info}"
+                            Width="20" Height="20"
+                            Canvas.Left="525" Canvas.Top="160"
+                            Text="3/text.txt"
+                            MouseDown="ShowInfo"
+                            Visibility="{Binding Visibility, ElementName=l24}"/>
+                <local:Arrow Width="70" Canvas.Left="540" Canvas.Top="175" 
+                             Length="50" Rotate="120"
+                             Visibility="{Binding Visibility, ElementName=l34}"/>
+                <local:Arrow Width="70" Canvas.Left="540" Canvas.Top="170" 
+                             Length="50" Rotate="60"
+                             Visibility="{Binding Visibility, ElementName=l35}"/>
+                <local:Arrow Width="105" Canvas.Left="540" Canvas.Top="175" 
+                             Length="85" Rotate="102"
+                             Visibility="{Binding Visibility, ElementName=l36}"/>
+                <local:Arrow Width="102" Canvas.Left="540" Canvas.Top="175" 
+                             Length="82" Rotate="74"
+                             Visibility="{Binding Visibility, ElementName=l37}"/>
+
+
+
+                <local:Node x:Name="l31" Title="Механические потери"
+                            Width="80" Height="70"
+                            Canvas.Left="40" Canvas.Top="190"
+                            Visibility="Hidden"/>
+                <local:Node Picture="{StaticResource info}"
+                            Width="20" Height="20"
+                            Canvas.Left="40" Canvas.Top="240"
+                            Text="4/text.txt"
+                            MouseDown="ShowInfo"
+                            Visibility="{Binding Visibility,ElementName=l31}"/>
+                <local:Node Picture="{StaticResource bearing}"
+                            ToolTip="Потери в подшипниках"
+                            Width="20" Height="20"
+                            Canvas.Left="60" Canvas.Top="240"
+                            Text="5/text.txt"
+                            MouseDown="ShowInfo"
+                            Visibility="{Binding Visibility,ElementName=l31}"/>
+                <local:Node x:Name="i313" Picture="{StaticResource brush}"
+                            ToolTip="Потери на трение щеток о коллектор"
+                            Width="20" Height="20"
+                            Canvas.Left="80" Canvas.Top="240"
+                            Text="6/text.txt"
+                            MouseDown="ShowInfo"
+                            Visibility="{Binding Visibility,ElementName=l31}"/>
+                <local:Node x:Name="i314" Picture="{StaticResource ventilation}"
+                            ToolTip="Вентиляционные потери"
+                            Width="20" Height="20"
+                            Canvas.Left="100" Canvas.Top="240"
+                            Text="7/text.txt"
+                            MouseDown="ShowInfo"
+                            Visibility="{Binding Visibility,ElementName=l31}"/>
+
+                <local:Node x:Name="l32" Title="Магнитные потери"
+                            Width="80" Height="70"
+                            Canvas.Left="170" Canvas.Top="190"
+                            Visibility="Hidden"/>
+                <local:Node x:Name="i321"
+                            Width="20" Height="20"
+                            Canvas.Left="180" Canvas.Top="240"
+                            Text="8/text.txt"
+                            MouseDown="ShowInfo"
+                            Picture="{StaticResource info}"
+                            Visibility="{Binding Visibility,ElementName=l32}"/>
+                <local:Node Width="20" Height="20"
+                            Canvas.Left="200" Canvas.Top="240"
+                            Text="9/text.txt"
+                            MouseDown="ShowInfo"
+                            Picture="{StaticResource hysteresis}"
+                            ToolTip="Потери на гистерезис"
+                            Visibility="{Binding Visibility,ElementName=l32}"/>
+                <local:Node Width="20" Height="20"
+                            Canvas.Left="220" Canvas.Top="240"
+                            Text="10/text.txt"
+                            MouseDown="ShowInfo"
+                            Picture="{StaticResource electro}"
+                            ToolTip="Потери на вихревые токи"
+                            Visibility="{Binding Visibility,ElementName=l32}"/>
+
+                <local:Node x:Name="l33" Title="Электрические потери"
+                            Width="83" Height="70"
+                            Canvas.Left="105" Canvas.Top="275"
+                            Visibility="Hidden"/>
+                <local:Node Picture="{StaticResource info}"
+                            Width="20" Height="20"
+                            Canvas.Left="110" Canvas.Top="325"
+                            Text="11/text.txt"
+                            MouseDown="ShowInfo"
+                            Visibility="{Binding Visibility,ElementName=l33}"/>
+                <local:Node x:Name="i332" Picture="{StaticResource winding}"
+                            ToolTip="Потери в обмотке якоря"
+                            Width="20" Height="20"
+                            Canvas.Left="128" Canvas.Top="325"
+                            Size="40"
+                            Text="12/text.txt"
+                            MouseDown="ShowInfo"
+                            Visibility="{Binding Visibility,ElementName=l33}"/>
+                <local:Node Picture="{StaticResource winding2}"
+                            ToolTip="Потери в обмотке возбуждения"
+                            Width="20" Height="20"
+                            Canvas.Left="146" Canvas.Top="325"
+                            Text="13/text.txt"
+                            MouseDown="ShowInfo"
+                            Visibility="{Binding Visibility,ElementName=l33}"/>
+                <local:Node x:Name="i334" Picture="{StaticResource brush}"
+                            ToolTip="Потери в щеточном контакте"
+                            Width="20" Height="20"
+                            Canvas.Left="165" Canvas.Top="325"
+                            Text="14/text.txt"
+                            MouseDown="ShowInfo"
+                            Visibility="{Binding Visibility,ElementName=l33}"/>
+
+
+                <local:Node x:Name="l34"
+                            Width="80" Height="70"
+                            Canvas.Left="430" Canvas.Top="185"
+                            Title="Потери на вихревые токи в меди обмоток"
+                            Visibility="Hidden"/>
+                <local:Node x:Name="l35"
+                            Width="83" Height="70"
+                            Canvas.Left="560" Canvas.Top="185"
+                            Title="Потери в уравнительных соединителях"
+                            Visibility="Hidden"/>
+                <local:Node x:Name="l36"
+                            Width="100" Height="90"
+                            Canvas.Left="420" Canvas.Top="260"
+                            Title="Потери в стали якоря из-за неравномерного распределения индукции при нагрузке"
+                            Visibility="Hidden"/>
+                <local:Node x:Name="l37"
+                            Width="110" Height="101"
+                            Canvas.Left="550" Canvas.Top="255"
+                            Title="Потери в полюсных наконечниках из-за пульсации основного потока вследствие зубчатости якоря"
+                            Visibility="Hidden"/>
+            </Canvas>
+        </Viewbox>
+    </Grid>
+</Page>

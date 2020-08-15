@@ -1,0 +1,60 @@
+﻿<UserControl x:Class="Коллекторные_машины.Mechanism"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Коллекторные_машины"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.8*"/>
+            <ColumnDefinition Width="1.7*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+        <Image Source="pack://application:,,,/GlobalResources/images/list.png" Grid.ColumnSpan="5" Grid.RowSpan="3"/>
+        <Button x:Name="close" Grid.Column="4" VerticalAlignment="Bottom" 
+                HorizontalAlignment="Left" Width="50" Height="50"
+                Content="X" Style="{StaticResource close_button}"/>
+        <ScrollViewer Grid.Row="1" Grid.Column="1" VerticalScrollBarVisibility="Auto" Padding="0 0 8 0">
+            <TextBlock TextWrapping="Wrap" FontSize="20" TextAlignment="Justify">
+                &#160;&#160;&#160;
+                <Hyperlink>
+                    В режиме холостого хода
+                    <Hyperlink.ToolTip>
+                        <Image Width="400" Source="pack://siteoforigin:,,,/Sections/1_3/1_3_2/2/1.png"/>
+                    </Hyperlink.ToolTip>
+                </Hyperlink> в машине наведен только основной магнитный поток, который направлен 
+                по продольной оси машины и распределен по полюсу равномерно. 
+                Если напряжение подать только на обмотку якоря, возникает 
+                <Hyperlink x:Name="link2">
+                    магнитный поток, создаваемый якорем
+                    <Hyperlink.ToolTip>
+                        <Image Width="400" Source="pack://siteoforigin:,,,/Sections/1_3/1_3_2/2/2.png"/>
+                    </Hyperlink.ToolTip>
+                </Hyperlink>. 
+                Магнитный поток направлен поперек основного магнитного потока.
+                <Hyperlink x:Name="link3">
+                    В режиме нагрузки
+                    <Hyperlink.ToolTip>
+                        <Image Width="400" Source="pack://siteoforigin:,,,/Sections/1_3/1_3_2/2/3.png"/>
+                    </Hyperlink.ToolTip>
+                </Hyperlink> 
+                магнитный поток создается как обмотками возбуждения, так и якорем: основной магнитный поток, 
+                направленный по продольной оси, искажается поперечным потоком якоря. Поэтому магнитный поток по 
+                полюсу распределен неравномерно: магнитная индукция под одним краем полюса значительно выше, 
+                чем под другим, максимальное значение магнитной индукции сдвинуто с середины полюса и физическая 
+                нейтраль ff´ смещена относительно геометрической нейтрали nn´ на угол β.
+При работе машины в режиме генератора физическая нейтраль смещается по направлению вращения якоря, а при работе 
+                двигателем - против вращения якоря.
+            </TextBlock>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

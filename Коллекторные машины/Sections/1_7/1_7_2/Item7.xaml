@@ -1,0 +1,63 @@
+﻿<UserControl x:Class="Коллекторные_машины.Section172.Item7"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Коллекторные_машины"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.2*"/>
+            <ColumnDefinition Width="2.6*"/>
+            <ColumnDefinition Width="0.6*"/>
+            <ColumnDefinition Width="2.6*"/>
+            <ColumnDefinition Width="0.2*"/>
+        </Grid.ColumnDefinitions>
+
+        <Image x:Name="notebook" Source="pack://application:,,,/GlobalResources/images/notebook.png" 
+               Grid.ColumnSpan="5" Grid.RowSpan="3" Stretch="Fill"/>
+        <Button x:Name="close" Grid.ColumnSpan="5" VerticalAlignment="Top" 
+                HorizontalAlignment="Right" Width="50" Height="50"
+                Content="X" Style="{StaticResource close_button}"/>
+
+        <Grid Panel.ZIndex="3" x:Name="image_grid" Grid.Row="1" Grid.Column="1">
+            <Image x:Name="image" Source="pack://siteoforigin:,,,/Sections/1_7/1_7_2/7/image.png"/>
+        </Grid>
+        
+        <ScrollViewer Grid.Row="1" Grid.Column="3" VerticalScrollBarVisibility="Auto" Padding="0 0 8 0">
+            <TextBlock x:Name="content" TextWrapping="Wrap" FontSize="20" TextAlignment="Justify">
+                &#160;&#160;&#160;На рисунке катушка показана в виде витка, внутри которого размещен постоянный магнит, и последовательные фазы поворота магнита.<LineBreak/>
+&#160;&#160;&#160;В положении 1 на магнит действует максимальный момент, если по вертикальной катушке течет ток. Магнит повернется на 90° и остановится в положении 2, так как момент в этом положении равен нулю. Магнит по инерции может пройти это положение. Если в момент перехода через положение равновесия ток в катушке переключить на противоположный, то магнит повернется через положение 3 с максимальным моментом в положение 4 и т.д.<LineBreak/>
+&#160;&#160;&#160;Величина вращающего момента М в зависимости от угла поворота показана на 
+                <Hyperlink>
+                    графике а
+                    <Hyperlink.ToolTip>
+                        <Image Width="600" Source="pack://siteoforigin:,,,/Sections/1_7/1_7_2/7/image1.png"/>
+                    </Hyperlink.ToolTip>
+                </Hyperlink>.
+                <LineBreak/>
+                &#160;&#160;&#160;Для продолжения вращения должна быть еще одна обмотка, перпендикулярная первой, и ток в нее должен быть подан, как показано на рисунке в положении 2. Ток в первой обмотке в положении 2 должен быть выключен. Положения 3 и 4 показывают дальнейшую работу двигателя.<LineBreak/>
+                &#160;&#160;&#160;Токи в перпендикулярных обмотках сдвинуты на 90°. Момент, создаваемый второй катушкой, показан на 
+                <Hyperlink>
+                    графике б
+                    <Hyperlink.ToolTip>
+                        <Image Width="600" Source="pack://siteoforigin:,,,/Sections/1_7/1_7_2/7/image2.png"/>
+                    </Hyperlink.ToolTip>
+                </Hyperlink>. 
+                Суммарный момент показан на 
+                <Hyperlink>
+                    графике в
+                    <Hyperlink.ToolTip>
+                        <Image Width="600" Source="pack://siteoforigin:,,,/Sections/1_7/1_7_2/7/image3.png"/>
+                    </Hyperlink.ToolTip>
+                </Hyperlink> и он никогда не равен нулю.
+            </TextBlock>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="Коллекторные_машины.Algorithm1_6_2"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Коллекторные_машины"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style TargetType="{x:Type local:Node}">
+            <Setter Property="TitleSize" Value="13"/>
+            <Setter Property="Panel.ZIndex" Value="2"/>
+        </Style>
+
+        <SolidColorBrush x:Key="Blue" Color="Blue"></SolidColorBrush>
+        <Style TargetType="{x:Type local:Arrow}">
+            <Setter Property="Thickness" Value="4"/>
+            <Setter Property="Color" Value="{StaticResource Blue}"/>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid>
+        <Image Source="pack://application:,,,/GlobalResources/backgrounds/notebook_list.jpg" Stretch="Fill"/>
+        <Viewbox>
+            <Canvas Width="1200" Height="700">
+                <local:Node x:Name="l1" Width="230" Height="230"
+                                Canvas.Top="20" Canvas.Left="20" MouseDown="ShowChildren"/>
+                <local:Arrow Width="110" Canvas.Left="230" Canvas.Top="130" 
+                                 Length="90"
+                                 Visibility="{Binding Visibility, ElementName=l2}"/>
+
+                <local:Node x:Name="l2" Width="200" Height="200" Visibility="Visible"
+                                Canvas.Top="40" Canvas.Left="330" MouseDown="ShowChildren"/>
+                <local:Arrow Width="95" Canvas.Left="510" Canvas.Top="140" 
+                                 Length="75"
+                                 Visibility="{Binding Visibility, ElementName=l3}"/>
+
+
+                <local:Node x:Name="l3" Width="230" Height="200" Visibility="Visible"
+                                Canvas.Top="40" Canvas.Left="580" MouseDown="ShowChildren"/>
+                <local:Arrow Width="95" Canvas.Left="695" Canvas.Top="220" 
+                                 Length="75" Rotate="90"
+                                 Visibility="{Binding Visibility, ElementName=l4}"/>
+
+
+                <local:Node x:Name="l4" Width="400" Height="320" Visibility="Visible"
+                                Canvas.Top="300" Canvas.Left="500" MouseDown="ShowChildren"/>
+                <local:Arrow Width="110" Canvas.Left="830" Canvas.Top="450" 
+                                 Length="90"
+                                 Visibility="{Binding Visibility, ElementName=l5}"/>
+
+                <local:Node x:Name="l5" Width="270" Height="250" Visibility="Visible"
+                                Canvas.Top="340" Canvas.Left="920"/>
+            </Canvas>
+        </Viewbox>
+    </Grid>
+</UserControl>

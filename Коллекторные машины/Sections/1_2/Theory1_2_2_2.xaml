@@ -1,0 +1,209 @@
+﻿<Page x:Class="Коллекторные_машины.Theory1_2_2_2"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Коллекторные_машины"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Theory1_2_2_2">
+
+    <Page.Resources>
+        <BitmapImage x:Key="info" UriSource="pack://application:,,,/GlobalResources/Icons/info.png"/>
+    </Page.Resources>
+
+    <Grid x:Name="grid">
+        <Image Stretch="Fill" Source="pack://application:,,,/GlobalResources/backgrounds/board.jpg"/>
+        <Viewbox Grid.Row="1" Grid.ColumnSpan="2">
+            <Canvas Width="680" Height="360">
+                <Button Template="{StaticResource arrow_button}"
+                        Canvas.Left="385" Canvas.Top="10"
+                        ToolTip="Перейти к &quot;ЭДС обмоток якоря, электромагнитный момент МПТ&quot;"
+                        Height="25" Width="50" Click="Forward"/>
+                <Button Template="{StaticResource arrow_button}"
+                        Canvas.Left="300" Canvas.Top="10"
+                        ToolTip="Перейти к &quot;Типы обмоток якоря МПТ&quot;"
+                        Height="25" Width="50" Click="Back">
+                    <Button.RenderTransform>
+                        <ScaleTransform ScaleX="-1"/>
+                    </Button.RenderTransform>
+                </Button>
+
+                <Button Content="Назад" Canvas.Left="400" Canvas.Top="40" Click="PrevPart"/>
+
+                <local:Node x:Name="root" Width="70" Height="70" 
+                        Canvas.Left="305" Canvas.Top="20"
+                        Title="Условия симметрии обмотки якоря"
+                        MouseDown="ShowChildren"/>
+                <local:Node x:Name="iroot1" Width="25" Height="25" 
+                        Canvas.Left="327" Canvas.Top="75"
+                        Picture="{StaticResource info}"
+                        Text="1/text.txt"
+                        Visibility="{Binding Visibility, ElementName=root}"
+                        MouseDown="ShowInfo"/>
+                <local:Arrow Width="132" Canvas.Left="310" Canvas.Top="60" 
+                             Length="112" Rotate="167"
+                             Visibility="{Binding Visibility, ElementName=l21}"/>
+                <local:Arrow Width="140" Canvas.Left="370" Canvas.Top="50" 
+                             Length="120" Rotate="13"
+                             Visibility="{Binding Visibility, ElementName=l22}"/>
+
+                <local:Node x:Name="l21" Width="75" Height="70" 
+                        Canvas.Left="116" Canvas.Top="50"
+                        Title="Причины несимметрии обмотки якоря"
+                        Visibility="Hidden" MouseDown="ShowChildren"/>
+                <local:Arrow Width="50" 
+                         Canvas.Left="155" Canvas.Top="120" Length="30" Rotate="120"
+                         Visibility="{Binding Visibility, ElementName=l31}"/>
+                <local:Arrow Width="50" 
+                         Canvas.Left="155" Canvas.Top="115" Length="30" Rotate="60"
+                         Visibility="{Binding Visibility, ElementName=l32}"/>
+
+                <local:Node x:Name="l22" Width="75" Height="70" 
+                        Canvas.Left="492.5" Canvas.Top="50"
+                        Title="Последствия несимметрии обмотки якоря"
+                        Text="2/text.txt"
+                        MouseDown="ShowInfo"
+                        Visibility="Hidden"/>
+
+
+                <local:Node x:Name="l31" Width="73" Height="70" 
+                        Canvas.Left="59" Canvas.Top="140"
+                        Title="Магнитная несимметрия обмотки якоря"
+                        MouseDown="ShowChildren"
+                        Visibility="Hidden"/>
+                <local:Arrow Width="70" Canvas.Left="100" Canvas.Top="200" 
+                             Length="50" Rotate="90"
+                             Visibility="{Binding Visibility, ElementName=l42}"/>
+                <local:Node x:Name="i311" Width="20" Height="20" Panel.ZIndex="2"
+                        Canvas.Left="85" Canvas.Top="195"
+                        Picture="{StaticResource info}"
+                        Text="10/text.txt"
+                        Visibility="{Binding Visibility, ElementName=l31}"
+                        MouseDown="ShowInfo"/>
+
+                <local:Node x:Name="l32" Width="100" Height="80" 
+                        Canvas.Left="160" Canvas.Top="140"
+                        Title="Неравномерность распределения потенциала по коллектору"
+                        MouseDown="ShowChildren"
+                        Visibility="Hidden"/>
+                <local:Arrow Width="75" Canvas.Left="243" Canvas.Top="175" 
+                             Length="55"
+                             Visibility="{Binding Visibility, ElementName=l41}"/>
+                <local:Node x:Name="i321" Width="20" Height="20" Panel.ZIndex="2"
+                        Canvas.Left="200" Canvas.Top="200"
+                        Picture="{StaticResource info}"
+                        Text="18/text.txt"
+                        Visibility="{Binding Visibility, ElementName=l32}"
+                        MouseDown="ShowInfo"/>
+
+
+                <local:Node x:Name="l41" Width="85" Height="70"
+                        Canvas.Left="300" Canvas.Top="145"
+                        Title="Уравнительные проводники второго рода"
+                        MouseDown="ShowChildren"
+                        Visibility="Hidden"/>
+                <local:Arrow Width="75" Canvas.Left="355" Canvas.Top="175" 
+                             Length="55"
+                             Visibility="{Binding Visibility, ElementName=l53}"/>
+                <local:Node x:Name="i411" Width="20" Height="20" Panel.ZIndex="2"
+                        Canvas.Left="333" Canvas.Top="200"
+                        Picture="{StaticResource info}"
+                        Text="19/text.txt"
+                        Visibility="{Binding Visibility, ElementName=l41}"
+                        MouseDown="ShowInfo"/>
+
+
+                <local:Node x:Name="l42" Width="75" Height="75" 
+                        Canvas.Left="60" Canvas.Top="260"
+                        Title="Последствия магнитной несимметрии обмотки якоря"
+                        MouseDown="ShowChildren"
+                        Visibility="Hidden"/>
+                <local:Arrow Width="75" Canvas.Left="115" Canvas.Top="290" 
+                             Length="55" Rotate="-20"
+                             Visibility="{Binding Visibility, ElementName=l51}"/>
+                <local:Arrow Width="75" Canvas.Left="120" Canvas.Top="290" 
+                             Length="55" Rotate="20"
+                             Visibility="{Binding Visibility, ElementName=l52}"/>
+                <local:Node x:Name="i421" Width="20" Height="20" Panel.ZIndex="2"
+                        Canvas.Left="88" Canvas.Top="323"
+                        Picture="{StaticResource info}"
+                        Text="19/text.txt"
+                        Visibility="{Binding Visibility, ElementName=l42}"
+                        MouseDown="ShowInfo"/>
+
+                <local:Node x:Name="l51" Width="60" Height="60" 
+                        Canvas.Left="180" Canvas.Top="235"
+                        Title="Волновая обмотка"
+                        Text="12/text.txt"
+                        MouseDown="ShowInfo"
+                        Visibility="Hidden"/>
+                <local:Node x:Name="l52" Width="60" Height="60" 
+                        Canvas.Left="180" Canvas.Top="300"
+                        Title="Петлевая обмотка"
+                        MouseDown="ShowChildren"
+                        Visibility="Hidden"/>
+                <local:Arrow Width="80" Canvas.Left="230" Canvas.Top="320" 
+                             Length="60" Rotate="-20"
+                             Visibility="{Binding Visibility, ElementName=l61}"/>
+                <local:Node x:Name="i521" Width="20" Height="20" Panel.ZIndex="2"
+                        Canvas.Left="200" Canvas.Top="340"
+                        Picture="{StaticResource info}"
+                        Text="13/text.txt"
+                        Visibility="{Binding Visibility, ElementName=l52}"
+                        MouseDown="ShowInfo"/>
+                <local:Node x:Name="l53" Width="75" Height="70" 
+                        Canvas.Left="420" Canvas.Top="145"
+                        Title="Особенности применения"
+                        Visibility="Hidden"/>
+
+
+                <local:Node x:Name="l61" Width="80" Height="80" 
+                        Canvas.Left="300" Canvas.Top="260"
+                        Title="Способы устранения магнитной несимметрии обмотки якоря"
+                        MouseDown="ShowChildren"
+                        Visibility="Hidden"/>
+                <local:Arrow Width="80" Canvas.Left="365" Canvas.Top="295" 
+                             Length="60"
+                             Visibility="{Binding Visibility, ElementName=l71}"/>
+                <local:Node x:Name="i611" Width="20" Height="20" Panel.ZIndex="2"
+                        Canvas.Left="330" Canvas.Top="325"
+                        Picture="{StaticResource info}"
+                        Text="14/text.txt"
+                        Visibility="{Binding Visibility, ElementName=l61}"
+                        MouseDown="ShowInfo"/>
+
+
+                <local:Node x:Name="l71" Width="85" Height="70" 
+                        Canvas.Left="430" Canvas.Top="265"
+                        Title="Уравнительные проводники первого рода"
+                        MouseDown="ShowChildren"
+                        Visibility="Hidden"/>
+                <local:Arrow Width="90" Canvas.Left="485" Canvas.Top="295" 
+                             Length="70" Rotate="-40"
+                             Visibility="{Binding Visibility, ElementName=l81}"/>
+                <local:Arrow Width="90" Canvas.Left="485" Canvas.Top="275" 
+                             Length="70" Rotate="30"
+                             Visibility="{Binding Visibility, ElementName=l82}"/>
+                <local:Node x:Name="i711" Width="20" Height="20" Panel.ZIndex="2"
+                        Canvas.Left="463" Canvas.Top="315"
+                        Picture="{StaticResource info}"
+                        Text="15/text.txt" 
+                        Visibility="{Binding Visibility, ElementName=l71}"
+                        MouseDown="ShowInfo"/>
+
+
+                <local:Node x:Name="l81" Width="75" Height="70" 
+                        Canvas.Left="550" Canvas.Top="200"
+                        Title="Особенности применения"
+                        Text="16/text.txt"
+                        MouseDown="ShowInfo"
+                        Visibility="Hidden"/>
+                <local:Node x:Name="l82" Width="75" Height="70" 
+                        Canvas.Left="550" Canvas.Top="280"
+                        Title="Расчетные соотношения"
+                        Visibility="Hidden"/>
+            </Canvas>
+        </Viewbox>
+    </Grid>
+</Page>

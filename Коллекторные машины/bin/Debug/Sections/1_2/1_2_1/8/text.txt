@@ -1,0 +1,10 @@
+﻿   Для простой двухслойной петлевой обмотки используют следующие расчетные соотношения:
+
+
+<formula>у<sub>1</sub>|=|{[Z<sub>эл</sub>]}{[2p]}|±|b</formula>
+
+
+<formula>y|=|у<sub>к</sub>|=|1</formula>
+
+
+<formula>y|=|у<sub>1</sub>|-|у<sub>2</sub></formula>

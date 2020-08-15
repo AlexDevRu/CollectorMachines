@@ -1,0 +1,127 @@
+﻿<Page x:Class="Коллекторные_машины.Theory1_5_1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Коллекторные_машины"
+      mc:Ignorable="d" 
+      d:DesignHeight="550" d:DesignWidth="1000"
+      Title="Theory1_5_1">
+
+    <Grid x:Name="grid">
+        <Image Stretch="Fill" Source="pack://application:,,,/GlobalResources/backgrounds/board.jpg"/>
+        <Viewbox>
+            <Canvas Width="680" Height="360">
+                <Button Template="{StaticResource arrow_button}"
+                        Canvas.Left="385" Canvas.Top="40"
+                        ToolTip="Перейти к &quot;Генератор постоянного тока независимого возбуждения&quot;"
+                        Height="25" Width="50" Click="Forward"/>
+                <Button Template="{StaticResource arrow_button}"
+                        Canvas.Left="295" Canvas.Top="40"
+                        ToolTip="Перейти к &quot;Генератор постоянного тока смешанного возбуждения&quot;"
+                        Height="25" Width="50" Click="Back">
+                    <Button.RenderTransform>
+                        <ScaleTransform ScaleX="-1"/>
+                    </Button.RenderTransform>
+                </Button>
+
+                <local:Node x:Name="root" Title="Генераторы постоянного тока"
+                            Width="70" Height="70"
+                            Canvas.Left="305" Canvas.Top="20"
+                            MouseDown="ShowChildren"/>
+                <Image x:Name="generator" Source="pack://siteoforigin:,,,/Sections/1_5/1_5_1/1_5_1.jpg" 
+                       Width="680" Height="360"
+                       Panel.ZIndex="3"
+                       Visibility="Hidden" MouseDown="CloseImage"/>
+                <Image x:Name="icon"
+                       Width="20" Height="20"
+                       Canvas.Left="330" Canvas.Top="70"
+                       Source="pack://application:,,,/GlobalResources/icons/pict.png" Panel.ZIndex="2" 
+                       MouseDown="OpenImage"/>
+                <local:Arrow Width="160" Canvas.Left="340" Canvas.Top="57" 
+                             Length="140" Rotate="157"
+                             Visibility="{Binding Visibility, ElementName=l21}"/>
+                <local:Arrow Width="160" Canvas.Left="340" Canvas.Top="46" 
+                             Length="140" Rotate="23"
+                             Visibility="{Binding Visibility, ElementName=l22}"/>
+
+
+
+                <local:Node x:Name="l21" Title="Классификация" 
+                            Width="85" Height="75"
+                            Canvas.Left="145" Canvas.Top="110"
+                            Visibility="Hidden" 
+                            MouseDown="ShowChildren"/>
+                <local:Arrow Width="70" Canvas.Left="195" Canvas.Top="180" 
+                             Length="50" Rotate="130"
+                             Visibility="{Binding Visibility, ElementName=l31}"/>
+                <local:Arrow Width="70" Canvas.Left="195" Canvas.Top="175" 
+                             Length="50" Rotate="50"
+                             Visibility="{Binding Visibility, ElementName=l32}"/>
+                <local:Arrow Width="120" Canvas.Left="195" Canvas.Top="180" 
+                             Length="100" Rotate="110"
+                             Visibility="{Binding Visibility, ElementName=l33}"/>
+                <local:Arrow Width="120" Canvas.Left="195" Canvas.Top="180" 
+                             Length="95" Rotate="69"
+                             Visibility="{Binding Visibility, ElementName=l34}"/>
+                
+                <local:Node x:Name="l22" Title="Основные характеристики" 
+                            Width="85" Height="75"
+                            Canvas.Left="450" Canvas.Top="110"
+                            Visibility="Hidden" 
+                            MouseDown="ShowChildren"/>
+                <local:Arrow Width="65" Canvas.Left="500" Canvas.Top="180" 
+                             Length="45" Rotate="130"
+                             Visibility="{Binding Visibility, ElementName=l35}"/>
+                <local:Arrow Width="105" Canvas.Left="500" Canvas.Top="180" 
+                             Length="85" Rotate="90"
+                             Visibility="{Binding Visibility, ElementName=l36}"/>
+                <local:Arrow Width="65" Canvas.Left="495" Canvas.Top="171" 
+                             Length="45" Rotate="50"
+                             Visibility="{Binding Visibility, ElementName=l37}"/>
+
+
+
+                <local:Node x:Name="l31" Title="Генераторы постоянного тока независимого возбуждения" 
+                            Text="g1.txt"
+                            Width="100" Height="80"
+                            Canvas.Left="60" Canvas.Top="190"
+                            Visibility="Hidden" 
+                            MouseDown="ShowInfo"/>
+                <local:Node x:Name="l32" Title="Генераторы постоянного тока параллельного возбуждения" 
+                            Text="g2.txt"
+                            Width="100" Height="80"
+                            Canvas.Left="220" Canvas.Top="190"
+                            Visibility="Hidden" MouseDown="ShowInfo"/>
+                <local:Node x:Name="l33" Title="Генераторы постоянного тока последовательного возбуждения" 
+                            Text="g3.txt"
+                            Width="105" Height="80"
+                            Canvas.Left="57.5" Canvas.Top="275"
+                            Visibility="Hidden" MouseDown="ShowInfo"/>
+                <local:Node x:Name="l34" Title="Генераторы постоянного тока смешанного возбуждения"
+                            Width="100" Height="80"
+                            Text="g4.txt"
+                            Canvas.Left="220" Canvas.Top="275"
+                            Visibility="Hidden" MouseDown="ShowInfo"/>
+
+
+
+                <local:Node x:Name="l35" Title="Характеристика холостого хода" 
+                            Text="hi1.txt"
+                            Width="85" Height="75"
+                            Canvas.Left="380" Canvas.Top="190"
+                            Visibility="Hidden" MouseDown="ShowInfo"/>
+                <local:Node x:Name="l36" Title="Внешняя характеристика" 
+                            Text="hi2.txt"
+                            Width="85" Height="75"
+                            Canvas.Left="520" Canvas.Top="190"
+                            Visibility="Hidden" MouseDown="ShowInfo"/>
+                <local:Node x:Name="l37" Title="Регулировочная характеристика" 
+                            Text="hi3.txt"
+                            Width="90" Height="75"
+                            Canvas.Left="450" Canvas.Top="275"
+                            Visibility="Hidden" MouseDown="ShowInfo"/>
+            </Canvas>
+        </Viewbox>
+    </Grid>
+</Page>

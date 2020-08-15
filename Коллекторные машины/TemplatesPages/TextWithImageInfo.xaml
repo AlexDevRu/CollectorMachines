@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="Коллекторные_машины.TextWithImage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Коллекторные_машины"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800">
+
+    <Grid x:Name="grid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2.6*"/>
+            <ColumnDefinition Width="0.6*"/>
+            <ColumnDefinition Width="2.6*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+        <Image x:Name="notebook" Source="pack://application:,,,/GlobalResources/images/notebook.png" Grid.ColumnSpan="5" Grid.RowSpan="3"/>
+        <Button x:Name="close" Grid.Column="4" VerticalAlignment="Top" 
+                HorizontalAlignment="Left" Width="50" Height="50"
+                Content="X" Style="{StaticResource close_button}"/>
+        
+        <Grid x:Name="image_grid" Grid.Row="1" Grid.Column="1" Panel.ZIndex="3">
+            <Image x:Name="image"/>
+        </Grid>
+        
+        <ScrollViewer Grid.Row="1" Grid.Column="3" VerticalScrollBarVisibility="Auto" Padding="0 0 8 0">
+            <TextBlock x:Name="content" TextWrapping="Wrap" FontSize="20" TextAlignment="Justify"/>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

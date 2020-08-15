@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="Коллекторные_машины.Collector"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Коллекторные_машины"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2.6*"/>
+            <ColumnDefinition Width="0.6*"/>
+            <ColumnDefinition Width="2.6*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+        <Image Source="pack://application:,,,/GlobalResources/images/notebook.png" Grid.ColumnSpan="5" Grid.RowSpan="3"/>
+        <Button x:Name="close" Grid.Column="4" VerticalAlignment="Top" 
+                HorizontalAlignment="Left" Width="50" Height="50"
+                Content="X" Style="{StaticResource close_button}" Command="{Binding Close}"/>
+
+        <Grid x:Name="image_grid" Grid.Column="1" Grid.Row="1" Panel.ZIndex="3">
+            <Image Source="pack://siteoforigin:,,,/Sections/1_1/1_1_2/24/image.png"/>
+        </Grid>
+        
+        
+        <ScrollViewer Grid.Row="1" Grid.Column="3" Padding="0 0 8 0">
+            <TextBlock x:Name="content" TextWrapping="Wrap" FontSize="20" TextAlignment="Justify">
+                &#160;&#160;&#160;<Span FontWeight="Bold" Foreground="Blue">Коллектор</Span> выполнен в виде набора 
+                медных пластин (ламелей), имеющих форму крепежной части в виде «ласточкин хвост», 
+                закрепленных, в основном, двумя способами: в больших машинах - со стальными конусными 
+                шайбами, в малых - залитыми в пластмассу. Со стороны обмотки коллекторные пластины 
+                имеют завышение с продольным пазом для укладки и припайки выводов обмотки. 
+                Эта часть коллектора называется 
+                <Hyperlink>
+                    петушком
+                    <Hyperlink.ToolTip>
+                        <Image Grid.Column="1" Grid.Row="1" Source="pack://siteoforigin:,,,/Sections/1_1/1_1_2/24/image1.png"/>
+                    </Hyperlink.ToolTip>
+                </Hyperlink>.
+            </TextBlock>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

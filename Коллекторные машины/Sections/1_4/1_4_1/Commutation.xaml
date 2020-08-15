@@ -1,0 +1,58 @@
+﻿<UserControl x:Class="Коллекторные_машины.Commutation"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Коллекторные_машины"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.3*"/>
+            <ColumnDefinition Width="4.3*"/>
+            <ColumnDefinition Width="0.6*"/>
+            <ColumnDefinition Width="4.1*"/>
+            <ColumnDefinition Width="0.5*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <Image Source="pack://application:,,,/GlobalResources/images/notebook.png" Stretch="Fill" Grid.ColumnSpan="5" Grid.RowSpan="3" Margin="10 0 10 0"/>
+        <Button x:Name="close" Grid.Column="3" VerticalAlignment="Top" 
+                HorizontalAlignment="Right" Width="50" Height="50"
+                Content="X" Style="{StaticResource close_button}"/>
+        <local:VideoPlayer Grid.Row="1" Grid.Column="1" uri="pack://siteoforigin:,,,/Sections/1_4/1_4_1/video.wmv"/>
+
+
+        <ScrollViewer Grid.Row="1" Grid.Column="3" VerticalScrollBarVisibility="Auto" Padding="0 0 8 0">
+            <TextBlock x:Name="content" TextWrapping="Wrap" FontSize="20" TextAlignment="Justify">
+                &#160;&#160;&#160;При вращении якоря коллекторные пластины поочередно вступают в соприкосновение со щетками. 
+                Переход щетки с одной пластины на другую сопровождается переключением секции обмотки из одной 
+                параллельной ветви в другую, при этом меняется как значение тока секции, так и его 
+                направление. Секция, в которой происходит коммутация, называют коммутирующей, а продолжительность 
+                процесса коммутации  - периодом коммутации:
+                <LineBreak/>
+                <ContentPresenter x:Name="formula1"/>
+                <LineBreak/>
+                &#160;&#160;&#160;В процессе коммутации в коммутируемой секции будет возникать ЭДС вращения 
+                <Span Foreground="Blue" FontWeight="Bold">е<Run FontSize="10" BaselineAlignment="Subscript">вр</Run></Span>. 
+                Так как направление тока в процессе коммутации меняется на противоположное, то в ней будет возникать 
+                ЭДС самоиндукции <Span Foreground="Blue" FontWeight="Bold">е<Run FontSize="10" BaselineAlignment="Subscript">S</Run></Span>:
+                <LineBreak/>
+                <ContentPresenter x:Name="formula2"/>
+                <LineBreak/>
+                &#160;&#160;&#160;Так как щетка замыкает не одну, а несколько секций, то изменение тока соседней 
+                секции вызовет появление ЭДС взаимоиндукции <Span Foreground="Blue" FontWeight="Bold">е<Run FontSize="10" BaselineAlignment="Subscript">M</Run></Span>:
+                <LineBreak/>
+                <ContentPresenter x:Name="formula3"/>
+                <LineBreak/>
+                &#160;&#160;&#160;В зависимости от соотношения этих ЭДС различают три вида коммутации.
+            </TextBlock>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

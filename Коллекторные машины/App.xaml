@@ -1,0 +1,19 @@
+﻿<Application x:Class="Коллекторные_машины.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Коллекторные_машины"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles/ArrowButton.xaml"/>
+                <ResourceDictionary Source="Styles/VideoButton.xaml"/>
+                <ResourceDictionary Source="Styles/HorizontalSlider.xaml"/>
+                <ResourceDictionary Source="Styles/Scrollbar.xaml"/>
+                <ResourceDictionary Source="Styles/Tooltip.xaml"/>
+                <ResourceDictionary Source="Styles/WatermarkTextBox.xaml"/>
+                <ResourceDictionary Source="Styles/Style.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

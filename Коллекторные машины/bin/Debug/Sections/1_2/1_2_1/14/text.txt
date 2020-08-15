@@ -1,0 +1,13 @@
+﻿   Расчет простой двухслойной волновой обмотки осуществляется следующим образом:
+
+
+<formula>y|=|y<sub>1</sub>|+|y<sub>2</sub></formula>
+
+
+<formula>y<sub>к</sub>|=|{[K±1]}{[p]}</formula>
+
+
+<formula>2a|=|2</formula>
+
+
+<formula>y<sub>1</sub>|=|{[Z<sub>эл</sub>]}{[2p]}|±|b</formula>

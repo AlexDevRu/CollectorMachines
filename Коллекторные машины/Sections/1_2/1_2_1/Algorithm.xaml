@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="Коллекторные_машины.Algorithm"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Коллекторные_машины"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <Style TargetType="{x:Type Span}">
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Foreground" Value="Red"/>
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="False">
+                    <Setter Property="Foreground" Value="Black"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.3*"/>
+            <ColumnDefinition Width="4.3*"/>
+            <ColumnDefinition Width="0.6*"/>
+            <ColumnDefinition Width="4.1*"/>
+            <ColumnDefinition Width="0.5*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <Image Source="pack://application:,,,/GlobalResources/images/notebook.png" Stretch="Fill" Grid.ColumnSpan="5" Grid.RowSpan="3" Margin="10 0 10 0"/>
+        <Button x:Name="close" Grid.Column="3" VerticalAlignment="Top" 
+                HorizontalAlignment="Right" Width="50" Height="50"
+                Content="X" Style="{StaticResource close_button}"/>
+        <local:VideoPlayer x:Name="video" Grid.Row="1" Grid.Column="1" 
+                           uri="pack://siteoforigin:,,,/Sections/1_2/1_2_1/video.wmv"/>
+
+
+        <ScrollViewer Grid.Row="1" Grid.Column="3" Padding="0 0 8 0" VerticalScrollBarVisibility="Auto">
+            <TextBlock x:Name="content" TextWrapping="Wrap" FontSize="20" TextAlignment="Justify">
+                <Span Foreground="Blue" FontWeight="Bold">&#160;&#160;&#160;Порядок построения обмоток:</Span><LineBreak/>
+                <Span x:Name="step1" MouseDown="ChangeTime">&#160;&#160;&#160;1. Изображаются пазы с двумя проводниками (верхнего и нижнего слоя)</Span><LineBreak/>
+                <Span x:Name="step2" MouseDown="ChangeTime">&#160;&#160;&#160;2. В соответствии со значениями шагов обмотки у<Run FontSize="10" BaselineAlignment="Subscript">1</Run> и у<Run FontSize="10" BaselineAlignment="Subscript">2</Run> выполняется соединение проводников в обмотку.</Span><LineBreak/>
+                <Span x:Name="step3" MouseDown="ChangeTime">&#160;&#160;&#160;3. Изображаются коллекторные пластины. Нумерация пластин соответствует номерам проводников верхнего слоя, с которыми они соединены.</Span><LineBreak/>
+                <Span x:Name="step4" MouseDown="ChangeTime">&#160;&#160;&#160;4. Используя значение полюсного деления τ, расставляют полюса.</Span><LineBreak/>
+                <Span x:Name="step5" MouseDown="ChangeTime">&#160;&#160;&#160;5. В соответствии с расположением полюсов располагаются щетки и определяется их полярность.</Span>
+            </TextBlock>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

@@ -1,0 +1,165 @@
+﻿<Page x:Class="Коллекторные_машины.Theory1_7_2"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Коллекторные_машины"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Theory1_7_2">
+
+    <Page.Resources>
+        <BitmapImage x:Key="info" UriSource="pack://application:,,,/GlobalResources/Icons/info.png"/>
+        <BitmapImage x:Key="pict" UriSource="pack://application:,,,/GlobalResources/Icons/pict.png"/>
+    </Page.Resources>
+
+    <Grid x:Name="grid">
+        <Image Stretch="Fill" Source="pack://application:,,,/GlobalResources/backgrounds/board.jpg"/>
+        <Viewbox>
+            <Canvas Width="680" Height="450">
+                <Button Template="{StaticResource arrow_button}"
+                        Canvas.Left="295" Canvas.Top="40"
+                        ToolTip="Перейти к &quot;Тахогенератор постоянного тока&quot;"
+                        Height="25" Width="50" Click="Back">
+                    <Button.RenderTransform>
+                        <ScaleTransform ScaleX="-1"/>
+                    </Button.RenderTransform>
+                </Button>
+
+                <local:Node x:Name="root" Width="110" Height="90"
+                            Canvas.Left="300" Canvas.Top="20"
+                            Title="Бесколлекторные двигатели постоянного тока (БДПТ)"
+                            MouseDown="ShowChildren"/>
+                <local:Node x:Name="iroot" Width="25" Height="25" 
+                        Canvas.Left="342.5" Canvas.Top="90"
+                        Picture="{StaticResource info}"
+                        Visibility="{Binding Visibility, ElementName=root}"
+                        Image="1/image.png" Text="1/text.txt" MouseDown="ShowInfo"/>
+                <local:Arrow Width="265" Canvas.Left="340" Canvas.Top="65" 
+                             Length="245" Rotate="165"
+                             Visibility="{Binding Visibility, ElementName=l23}"/>
+                <local:Arrow Width="105" Canvas.Left="340" Canvas.Top="45" 
+                             Length="85" Rotate="125"
+                             Visibility="{Binding Visibility, ElementName=l21}"/>
+                <local:Arrow Width="270" Canvas.Left="340" Canvas.Top="50" 
+                             Length="250" Rotate="15"
+                             Visibility="{Binding Visibility, ElementName=l24}"/>
+                <local:Arrow Width="105" Canvas.Left="380" Canvas.Top="45" 
+                             Length="85" Rotate="55"
+                             Visibility="{Binding Visibility, ElementName=l22}"/>
+                
+                
+
+                <local:Node x:Name="l21" Width="110" Height="90"
+                            Canvas.Left="210" Canvas.Top="120" Visibility="Hidden"
+                            Title="Устройство бесколлекторных двигателей постоянного тока"
+                            MouseDown="ShowChildren"/>
+                <local:Node x:Name="i21" Width="25" Height="25" 
+                        Canvas.Left="252.5" Canvas.Top="188"
+                        Picture="{StaticResource info}"
+                        Visibility="{Binding Visibility, ElementName=l21}"/>
+                <local:Arrow Width="105" Canvas.Left="270" Canvas.Top="200" 
+                             Length="20" Rotate="90"
+                             Visibility="{Binding Visibility, ElementName=l31}"/>
+                
+                
+                <local:Node x:Name="l22" Width="110" Height="90"
+                            Canvas.Left="570" Canvas.Top="120" Visibility="Hidden"
+                            Title="Принцип действия бесколлекторных двигателей постоянного тока"
+                            MouseDown="ShowChildren"/>
+                <local:Node x:Name="i22" Width="25" Height="25" 
+                        Canvas.Left="612.5" Canvas.Top="188"
+                        Picture="{StaticResource info}"
+                        Visibility="{Binding Visibility, ElementName=l22}"/>
+                <local:Arrow Width="48" Canvas.Left="630" Canvas.Top="210" 
+                             Length="28" Rotate="130"
+                             Visibility="{Binding Visibility, ElementName=l32}"/>
+                <local:Arrow Width="45" Canvas.Left="630" Canvas.Top="205" 
+                             Length="25" Rotate="50"
+                             Visibility="{Binding Visibility, ElementName=l33}"/>
+                
+                
+                
+                <local:Node x:Name="l23" Width="80" Height="80"
+                            Canvas.Left="20" Canvas.Top="125"
+                            Title="Достоинства и недостатки"
+                            Text="11/text.txt" Visibility="Hidden"
+                            MouseDown="ShowInfo"/>
+                
+                <local:Node x:Name="l24" Width="80" Height="80"
+                            Canvas.Left="400" Canvas.Top="125"
+                            Title="Область применения"
+                            Text="10/text.txt" Visibility="Hidden"
+                            MouseDown="ShowInfo"/>
+
+
+                <local:Node x:Name="l31" Width="100" Height="100"
+                            Canvas.Left="217" Canvas.Top="230" Visibility="Hidden"
+                            Title="Разновидности  бесколлекторных двигателей постоянного тока"
+                            MouseDown="ShowChildren"/>
+                <local:Arrow Width="65" Canvas.Left="230" Canvas.Top="270" 
+                             Length="45" Rotate="140"
+                             Visibility="{Binding Visibility, ElementName=l41}"/>
+                <local:Arrow Width="65" Canvas.Left="310" Canvas.Top="260" 
+                             Length="45" Rotate="40"
+                             Visibility="{Binding Visibility, ElementName=l42}"/>
+
+                <local:Node x:Name="l32" Width="80" Height="80"
+                            Canvas.Left="540" Canvas.Top="235"
+                            Title="Основные параметры"
+                            Text="8/text.txt" Visibility="Hidden"
+                            MouseDown="ShowInfo"/>
+
+                <local:Node x:Name="l33" Width="80" Height="80"
+                            Canvas.Left="635" Canvas.Top="235"
+                            Title="Схемы управления"
+                            Image="9/image.jpg" Text="9/text.txt" Visibility="Hidden"
+                            MouseDown="ShowInfo"/>
+
+
+                <local:Node x:Name="l41" Width="80" Height="80"
+                            Canvas.Left="135" Canvas.Top="300"
+                            Title="В зависимости от формы противоЭДС" Visibility="Hidden"
+                            MouseDown="ShowChildren"/>
+                <local:Arrow Width="60" Canvas.Left="140" Canvas.Top="345" 
+                             Length="40" Rotate="210"
+                             Visibility="{Binding Visibility, ElementName=l51}"/>
+                <local:Arrow Width="83" Canvas.Left="165" Canvas.Top="335" 
+                             Length="63" Rotate="150"
+                             Visibility="{Binding Visibility, ElementName=l52}"/>
+                
+                
+                <local:Node x:Name="l42" Width="90" Height="85"
+                            Canvas.Left="320" Canvas.Top="300"
+                            Title="В зависимости от конструкции" Visibility="Hidden"
+                            MouseDown="ShowChildren"/>
+                <local:Arrow Width="50" Canvas.Left="397" Canvas.Top="335" 
+                             Length="30" Rotate="-40"
+                             Visibility="{Binding Visibility, ElementName=l53}"/>
+                <local:Arrow Width="50" Canvas.Left="404" Canvas.Top="335" 
+                             Length="30" Rotate="40"
+                             Visibility="{Binding Visibility, ElementName=l54}"/>
+
+                
+                
+                <local:Node x:Name="l51" Width="80" Height="80"
+                            Canvas.Left="20" Canvas.Top="260"
+                            Title="BLDC" Text="3/text.txt" Visibility="Hidden"
+                            MouseDown="ShowInfo"/>
+                <local:Node x:Name="l52" Width="80" Height="80"
+                            Canvas.Left="20" Canvas.Top="350"
+                            Title="PMSM" Text="4/text.txt" Visibility="Hidden"
+                            MouseDown="ShowInfo"/>
+
+                <local:Node x:Name="l53" Width="80" Height="80"
+                            Canvas.Left="430" Canvas.Top="260" Visibility="Hidden"
+                            Title="С внутренним ротором" Image="5/image.png" Text="5/text.txt"
+                            MouseDown="ShowInfo"/>
+                <local:Node x:Name="l54" Width="80" Height="80"
+                            Canvas.Left="430" Canvas.Top="350" Visibility="Hidden"
+                            Title="С внешним ротором" Image="6/image.png" Text="6/text.txt"
+                            MouseDown="ShowInfo"/>
+            </Canvas>
+        </Viewbox>
+    </Grid>
+</Page>

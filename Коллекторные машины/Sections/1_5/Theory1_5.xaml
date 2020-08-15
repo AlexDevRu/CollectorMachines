@@ -1,0 +1,109 @@
+﻿<Page x:Class="Коллекторные_машины.Theory1_5"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Коллекторные_машины"
+      mc:Ignorable="d" 
+      d:DesignHeight="550" d:DesignWidth="1000"
+      Title="Theory1_5" Loaded="Page_Loaded">
+
+    <Grid x:Name="grid">
+        <Image Stretch="Fill" Source="pack://application:,,,/GlobalResources/backgrounds/board.jpg"/>
+        <Viewbox>
+            <Canvas Width="680" Height="360">
+                <Button x:Name="forward" Template="{StaticResource arrow_button}"
+                        Canvas.Left="385" Canvas.Top="40"
+                        Height="25" Width="50" Click="Forward"/>
+                <Button x:Name="back" Template="{StaticResource arrow_button}"
+                        Canvas.Left="270" Canvas.Top="40"
+                        Height="25" Width="50" Click="Back">
+                    <Button.RenderTransform>
+                        <ScaleTransform ScaleX="-1"/>
+                    </Button.RenderTransform>
+                </Button>
+                
+                <local:Node x:Name="root" Width="105" Height="90"
+                            Canvas.Left="277.5" Canvas.Top="20"
+                            Title="Генераторы постоянного тока независимого возбуждения" 
+                            MouseDown="ShowChildren"/>
+                <local:Arrow Width="195" Canvas.Left="340" Canvas.Top="55" 
+                             Length="175" Rotate="160"
+                             Visibility="{Binding Visibility, ElementName=l21}"/>
+                <local:Arrow Width="160" Canvas.Left="340" Canvas.Top="53" 
+                             Length="140" Rotate="20"
+                             Visibility="{Binding Visibility, ElementName=l22}"/>
+
+
+                <local:Node x:Name="l21" Title="Схема включения"
+                            Width="70" Height="70"
+                            Canvas.Left="100" Canvas.Top="110"
+                            Image="sheme.png"
+                            Visibility="Hidden" MouseDown="ShowInfo"/>
+                <local:Node x:Name="l22" Title="Характеристики" 
+                            Width="88" Height="75"
+                            Canvas.Left="468" Canvas.Top="107.5"
+                            Visibility="Hidden" MouseDown="ShowChildren"/>
+                <local:Arrow Width="65" Canvas.Left="520" Canvas.Top="175" 
+                             Length="45" Rotate="125"
+                             Visibility="{Binding Visibility, ElementName=l31}"/>
+                <local:Arrow Width="65" Canvas.Left="515" Canvas.Top="170" 
+                             Length="45" Rotate="55"
+                             Visibility="{Binding Visibility, ElementName=l32}"/>
+                <local:Arrow Width="100" Canvas.Left="518" Canvas.Top="180" 
+                             Length="80" Rotate="90"
+                             Visibility="{Binding Visibility, ElementName=l33}"/>
+                
+
+
+                <local:Node x:Name="l31" Title="Характеристика холостого хода"
+                            Width="90" Height="75"
+                            Canvas.Left="400" Canvas.Top="190"
+                            Visibility="Hidden" MouseDown="ShowInfo"/>
+                <local:Node x:Name="l32" Title="Внешняя характеристика" 
+                            Image="hi2.png" Text="hi2.txt"
+                            Width="90" Height="75"
+                            Canvas.Left="535" Canvas.Top="190" 
+                            Visibility="Hidden" MouseDown="ShowInfo"/>
+                <local:Node x:Name="l33" Title="Регулировочная характеристика"
+                            Width="90" Height="75"
+                            Canvas.Left="470" Canvas.Top="270"
+                            Visibility="Hidden" MouseDown="ShowInfo"/>
+            </Canvas>
+        </Viewbox>
+        <!--
+        <Button x:Name="button_close" 
+                Width="50" Height="50" Grid.Row="0" Grid.Column="5" Content="X"
+                HorizontalAlignment="Right" VerticalAlignment="Top" Visibility="Hidden"/>
+
+        <local:Node x:Name="root" Title="Генераторы постоянного тока независимого возбуждения" 
+                    Grid.Column="3" Grid.Row="0" MouseDown="ShowChildren"/>
+
+
+        <local:Node x:Name="l21" Title="Схема включения"
+                    Grid.Column="1" Grid.Row="1" 
+                    Image="sheme.png"
+                    Visibility="Hidden" MouseDown="ShowInfo"/>
+        <local:Node x:Name="l22" Title="Характеристики" 
+                    Grid.Column="5" Grid.Row="1"
+                    Visibility="Hidden" MouseDown="ShowChildren"/>
+
+        <local:Node x:Name="l35" Title="Характеристика холостого хода"
+                    Grid.Column="4" Grid.Row="2" 
+                    Visibility="Hidden" MouseDown="ShowInfo"/>
+        <local:Node x:Name="l36" Title="Внешняя характеристика" 
+                    Image="hi2.png" Text="hi2.txt"
+                    Grid.Column="6" Grid.Row="2" Visibility="Hidden" MouseDown="ShowInfo" Panel.ZIndex="2"/>
+        <local:Node x:Name="l37" Title="Регулировочная характеристика"
+                    Grid.Column="5" Grid.Row="3" 
+                    Visibility="Hidden" MouseDown="ShowInfo"/>
+
+        <Button x:Name="forward" Grid.Column="4" Template="{StaticResource arrow_button}" Margin="0,0,0,-10" Height="50" Width="100" VerticalAlignment="Center" HorizontalAlignment="Left" Click="Forward"/>
+        <Button Grid.Column="2" Template="{StaticResource arrow_button}" Margin="0,0,0,-10" Height="50" Width="100" VerticalAlignment="Center" HorizontalAlignment="Right" Click="Back">
+            <Button.LayoutTransform>
+                <RotateTransform Angle="180"/>
+            </Button.LayoutTransform>
+        </Button>-->
+        
+    </Grid>
+</Page>

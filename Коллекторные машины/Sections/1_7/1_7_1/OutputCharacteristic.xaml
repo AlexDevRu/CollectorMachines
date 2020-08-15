@@ -1,0 +1,115 @@
+﻿<UserControl x:Class="Коллекторные_машины.OutputCharacteristic"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Коллекторные_машины"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2.6*"/>
+            <ColumnDefinition Width="0.6*"/>
+            <ColumnDefinition Width="2.6*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+        <Image Source="pack://application:,,,/GlobalResources/images/notebook.png" Grid.ColumnSpan="5" Grid.RowSpan="3"/>
+        <Button x:Name="close" Grid.Column="4" VerticalAlignment="Top" 
+                HorizontalAlignment="Left" Width="50" Height="50"
+                Content="X" Style="{StaticResource close_button}"/>
+        <Viewbox Grid.Row="1" Grid.Column="1">
+            <Canvas Width="1000" Height="800">
+                <Image Source="pack://siteoforigin:,,,/Sections/1_7/1_7_1/9\image.png"
+                       Width="1000"/>
+                <Line Stroke="Black" StrokeThickness="2" X1="290" Y1="250" X2="350" Y2="330"/>
+                <TextBlock Text="1" FontSize="50" Canvas.Left="265" Canvas.Top="200"/>
+
+                <Line Stroke="Black" StrokeThickness="2" X1="470" Y1="135" X2="520" Y2="100"/>
+                <TextBlock Text="2" FontSize="50" Canvas.Left="510" Canvas.Top="40"/>
+
+                <Line Stroke="Black" StrokeThickness="2" X1="580" Y1="250" X2="670" Y2="330"/>
+                <TextBlock Text="3" FontSize="50" Canvas.Left="670" Canvas.Top="300"/>
+
+
+                <Line Stroke="Red" StrokeThickness="6" X1="145" Y1="800" X2="455" Y2="100"/>
+                <Line Stroke="Transparent" StrokeThickness="30" X1="145" Y1="800" X2="455" Y2="100" ToolTip="идеальная выходная характеристика"/>
+
+                <Line Stroke="Blue" StrokeThickness="6" X1="350" Y1="800" X2="640" Y2="100"/>
+                <Line Stroke="Transparent" StrokeThickness="30" X1="350" Y1="800" X2="640" Y2="100" ToolTip="выходная характеристика тахогенератора с учетом зоны нечувствительности"/>
+
+                <Path Stroke="Yellow" StrokeThickness="6"
+                      Canvas.Top="250" Canvas.Left="110" RenderTransformOrigin="0.5 0.5">
+                    <Path.Data>
+                        <PathGeometry>
+                            <PathFigure StartPoint="400,210">
+                                <ArcSegment Point="500,200" Size="20,8"></ArcSegment>
+                            </PathFigure>
+                        </PathGeometry>
+                    </Path.Data>
+                    <Path.RenderTransform>
+                        <TransformGroup>
+                            <RotateTransform Angle="220"/>
+                            <ScaleTransform ScaleX="-1"/>
+                        </TransformGroup>
+                    </Path.RenderTransform>
+                </Path>
+                <Path Stroke="Transparent" StrokeThickness="30"
+                      ToolTip="выходная характеристика тахогенератора с учетом реакции якоря"
+                      Canvas.Top="250" Canvas.Left="110" RenderTransformOrigin="0.5 0.5">
+                    <Path.Data>
+                        <PathGeometry>
+                            <PathFigure StartPoint="400,210">
+                                <ArcSegment Point="500,200" Size="20,8"></ArcSegment>
+                            </PathFigure>
+                        </PathGeometry>
+                    </Path.Data>
+                    <Path.RenderTransform>
+                        <TransformGroup>
+                            <RotateTransform Angle="220"/>
+                            <ScaleTransform ScaleX="-1"/>
+                        </TransformGroup>
+                    </Path.RenderTransform>
+                </Path>
+
+
+                
+            </Canvas>
+        </Viewbox>
+        <ScrollViewer Grid.Row="1" Grid.Column="3" VerticalScrollBarVisibility="Auto" Padding="0 0 8 0">
+            <TextBlock TextWrapping="Wrap" FontSize="20" TextAlignment="Justify">
+                &#160;&#160;&#160;<Span Foreground="Blue" FontWeight="Bold">Выходная характеристика</Span> 
+                – это зависимость напряжения на выходе тахогенератора от частоты вращения якоря.<LineBreak/>
+&#160;&#160;&#160;При холостом ходе напряжение на внешних зажимах тахогенератора будет соответствовать ЭДС 
+                <Span FontStyle="Italic">(U<Run BaselineAlignment="Subscript" FontSize="13">г</Run> = Е)</Span>, 
+                т.е. <Span FontStyle="Italic">(U<Run BaselineAlignment="Subscript" FontSize="13">г</Run> = kn)</Span>. 
+                Т.е. между напряжением тахогенератора U<Run BaselineAlignment="Subscript" FontSize="13">г</Run> 
+                и скоростью вращения вала <Span FontStyle="Italic">n</Span> существует линейная зависимость 
+                <Span Foreground="Blue" FontWeight="Bold">(прямая 1)</Span>.<LineBreak/>
+&#160;&#160;&#160;При подключении нагрузки на магнитный поток Ф влияет реакция якоря и поэтому выходная характеристика несколько 
+отличается от линейной <Span Foreground="Blue" FontWeight="Bold">(кривая 2)</Span>. 
+Для сохранения линейности магнитная цепь машины должна быть ненасыщенной.<LineBreak/>
+&#160;&#160;&#160;При нагрузке имеет место падение напряжения в обмотке якоря 
+<Span FontStyle="Italic">R<Run BaselineAlignment="Subscript" FontSize="13">я</Run>I<Run BaselineAlignment="Subscript" FontSize="13">я</Run></Span>, 
+между коллектором и щётками <Span FontStyle="Italic">U<Run BaselineAlignment="Subscript" FontSize="13">щ</Run></Span>.
+В этом случае напряжение на выходе тахогенератора будет определяться выражением 
+<Span FontStyle="Italic">U<Run BaselineAlignment="Subscript" FontSize="13">г</Run> = Е – U<Run BaselineAlignment="Subscript" FontSize="13">щ</Run> – R<Run BaselineAlignment="Subscript" FontSize="13">я</Run>I<Run BaselineAlignment="Subscript" FontSize="13">я</Run></Span>.
+Так как при малых скоростях <Span FontStyle="Italic">Е &lt; U<Run BaselineAlignment="Subscript" FontSize="13">щ</Run></Span> и 
+<Span FontStyle="Italic">U<Run BaselineAlignment="Subscript" FontSize="13">г</Run> = 0</Span>, 
+на выходной характеристике появляется зона нечувствительности ЗН 
+<Span Foreground="Blue" FontWeight="Bold">(прямая 3)</Span>. 
+Для уменьшения зоны нечувствительности надо уменьшить U<Run BaselineAlignment="Subscript" FontSize="13">щ</Run>, т.е. сопротивление щёток необходимо сделать как 
+можно меньше, а нагрузки – больше. Для уменьшения зоны нечувствительности в тахогенераторах применяют щетки с небольшим 
+значением U<Run BaselineAlignment="Subscript" FontSize="13">щ</Run>, т. е. с малым сопротивлением (медно-графитные или серебряно-графитные). В тахогенераторах высокой точности
+(прецизионных) используют щетки с серебряными или золотыми напайками.
+            </TextBlock>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

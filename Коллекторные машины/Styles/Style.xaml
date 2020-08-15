@@ -1,0 +1,15 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Коллекторные_машины.Styles"
+                    xmlns:my="clr-namespace:Коллекторные_машины">
+    
+    <SolidColorBrush x:Key="White" Color="#FFF"></SolidColorBrush>
+    <Style TargetType="{x:Type my:Arrow}">
+        <Setter Property="Thickness" Value="4"/>
+        <Setter Property="Color" Value="{StaticResource White}"/>
+    </Style>
+    <Style TargetType="{x:Type my:Node}">
+        <Setter Property="TitleSize" Value="7"/>
+        <Setter Property="Panel.ZIndex" Value="2"/>
+    </Style>
+</ResourceDictionary>

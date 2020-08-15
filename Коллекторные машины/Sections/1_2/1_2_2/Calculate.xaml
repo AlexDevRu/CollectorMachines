@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="Коллекторные_машины.Calculate"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Коллекторные_машины"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.8*"/>
+            <ColumnDefinition Width="1.5*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+        <Image Source="pack://application:,,,/GlobalResources/images/list.png" Grid.ColumnSpan="5" Grid.RowSpan="3"/>
+        <Button x:Name="close" Grid.Column="4" VerticalAlignment="Bottom" 
+                HorizontalAlignment="Left" Width="50" Height="50"
+                Content="X" Style="{StaticResource close_button}"/>
+        <ScrollViewer x:Name="scroll" Grid.Row="1" Grid.Column="1" VerticalScrollBarVisibility="Auto">
+            <TextBlock x:Name="content" TextWrapping="Wrap" TextAlignment="Justify" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Hyperlink>
+                    Потенциальный шаг у<Span FontSize="13" BaselineAlignment="Subscript">ур</Span>
+                    <Hyperlink.ToolTip>
+                        <TextBlock Width="300" FontSize="20" TextWrapping="Wrap">
+                            <Span Foreground="Blue" FontWeight="Bold">Потенциальный шаг у<Span FontSize="13" BaselineAlignment="Subscript">ур</Span></Span> 
+                            – это расстояние между соседними точками равного потенциала.
+                        </TextBlock>
+                    </Hyperlink.ToolTip>
+                </Hyperlink> 
+                при расположении уравнительных соединений со стороны коллектора выражается числом коллекторных 
+                делений:<LineBreak/><LineBreak/>
+                <ContentPresenter x:Name="formula1" Height="auto" Width="auto"/><LineBreak/><LineBreak/>
+                Полное число уравнителей первого рода равно:<LineBreak/><LineBreak/>
+                <ContentPresenter x:Name="formula2" Height="auto" Width="auto"/>
+            </TextBlock>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

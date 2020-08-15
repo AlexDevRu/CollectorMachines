@@ -1,0 +1,107 @@
+﻿<Page x:Class="Коллекторные_машины.Theory1_4_2"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Коллекторные_машины"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Theory1_4_2">
+
+    <Grid x:Name="grid">
+        <Image Stretch="Fill" Source="pack://application:,,,/GlobalResources/backgrounds/board.jpg"/>
+        <Viewbox Grid.Row="1">
+            <Canvas Width="680" Height="360">
+                <Button Template="{StaticResource arrow_button}"
+                        Canvas.Left="295" Canvas.Top="35"
+                        ToolTip="Перейти к &quot;Виды коммутации&quot;"
+                        Height="25" Width="50" Click="Back">
+                    <Button.RenderTransform>
+                        <ScaleTransform ScaleX="-1"/>
+                    </Button.RenderTransform>
+                </Button>
+
+                <local:Node x:Name="root" Width="70" Height="70" 
+                            Canvas.Left="300" Canvas.Top="20"
+                            Title="Искрение" MouseDown="ShowChildren"/>
+                <local:Arrow Width="155" Canvas.Left="310" Canvas.Top="65" 
+                             Length="135" Rotate="160"
+                             Visibility="{Binding Visibility, ElementName=l21}"/>
+                <local:Arrow Width="155" Canvas.Left="363" Canvas.Top="55" 
+                             Length="135" Rotate="20"
+                             Visibility="{Binding Visibility, ElementName=l22}"/>
+
+
+
+                <local:Node x:Name="l21" Width="70" Height="70" 
+                            Canvas.Left="100" Canvas.Top="90" Visibility="Hidden"
+                            Title="Причины искрения" MouseDown="ShowChildren"/>
+                <local:Arrow Width="70" Canvas.Left="141" Canvas.Top="165" 
+                             Length="50" Rotate="145"
+                             Visibility="{Binding Visibility, ElementName=l31}"/>
+                <local:Arrow Width="100" Canvas.Left="142" Canvas.Top="160" 
+                             Length="80" Rotate="90"
+                             Visibility="{Binding Visibility, ElementName=l32}"/>
+                <local:Arrow Width="70" Canvas.Left="138" Canvas.Top="155" 
+                             Length="50" Rotate="35"
+                             Visibility="{Binding Visibility, ElementName=l33}"/>
+
+                <local:Node x:Name="l22" Width="70" Height="70" 
+                            Canvas.Left="500" Canvas.Top="90" Visibility="Hidden"
+                            Title="Степени искрения" MouseDown="ShowChildren"/>
+                <local:Arrow Width="90" Canvas.Left="541" Canvas.Top="166" 
+                             Length="70" Rotate="145"
+                             Visibility="{Binding Visibility, ElementName=l34}"/>
+                <local:Arrow Width="85" Canvas.Left="541" Canvas.Top="157" 
+                             Length="65" Rotate="35"
+                             Visibility="{Binding Visibility, ElementName=l35}"/>
+                <local:Arrow Width="130" Canvas.Left="541" Canvas.Top="166" 
+                             Length="110" Rotate="120"
+                             Visibility="{Binding Visibility, ElementName=l36}"/>
+                <local:Arrow Width="130" Canvas.Left="541" Canvas.Top="157" 
+                             Length="110" Rotate="60"
+                             Visibility="{Binding Visibility, ElementName=l37}"/>
+                <local:Arrow Width="130" Canvas.Left="543" Canvas.Top="160" 
+                             Length="110" Rotate="90"
+                             Visibility="{Binding Visibility, ElementName=l38}"/>
+
+
+
+                <local:Node x:Name="l31" Width="95" Height="80" 
+                            Canvas.Left="0" Canvas.Top="170"
+                            Title="Коммутационные причины" Visibility="Hidden"
+                            Text="6/text.txt" MouseDown="ShowInfo"/>
+                <local:Node x:Name="l32" Width="80" Height="70" 
+                            Canvas.Left="98" Canvas.Top="252"
+                            Title="Механические причины" Visibility="Hidden"
+                            Text="7/text.txt" MouseDown="ShowInfo"/>
+                <local:Node x:Name="l33" Width="90" Height="80" 
+                            Canvas.Left="180" Canvas.Top="170"
+                            Title="Потенциальные причины" Visibility="Hidden"
+                            Text="8/text.txt" MouseDown="ShowInfo"/>
+
+
+                <local:Node x:Name="l34" Width="70" Height="70" 
+                            Canvas.Left="400" Canvas.Top="170"
+                            Title="Степень 1" Visibility="Hidden"
+                            Text="1/text.txt" MouseDown="ShowInfo"/>
+                <local:Node x:Name="l35" Width="80" Height="70" 
+                            Canvas.Left="595" Canvas.Top="170"
+                            Title="Степень 1 1/4" Visibility="Hidden"
+                            Text="2/text.txt" MouseDown="ShowInfo"/>
+                <local:Node x:Name="l36" Width="80" Height="70" 
+                            Canvas.Left="395" Canvas.Top="250"
+                            Title="Степень 1 1/2" Visibility="Hidden"
+                            Text="3/text.txt" MouseDown="ShowInfo"/>
+                <local:Node x:Name="l37" Width="70" Height="70" 
+                            Canvas.Left="600" Canvas.Top="250"
+                            Title="Степень 2" Visibility="Hidden"
+                            Text="4/text.txt" MouseDown="ShowInfo"/>
+                <local:Node x:Name="l38" Width="80" Height="70" 
+                            Canvas.Left="500" Canvas.Top="280"
+                            Title="Степень 3" Visibility="Hidden"
+                            Text="5/text.txt" MouseDown="ShowInfo"/>
+            </Canvas>
+        </Viewbox>
+    </Grid>
+</Page>

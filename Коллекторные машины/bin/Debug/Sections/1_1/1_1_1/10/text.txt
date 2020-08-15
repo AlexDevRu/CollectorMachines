@@ -1,0 +1,1 @@
+﻿<formula>M =|B|I|S|sin|α</formula>

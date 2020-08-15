@@ -1,0 +1,103 @@
+﻿<Page x:Class="Коллекторные_машины.Theory1_4_1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:Коллекторные_машины"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Theory1_4_1">
+
+    <Page.Resources>
+        <BitmapImage x:Key="info" UriSource="pack://application:,,,/GlobalResources/Icons/info.png"/>
+    </Page.Resources>
+
+    <Grid x:Name="grid">
+        <Image Stretch="Fill" Source="pack://application:,,,/GlobalResources/backgrounds/board.jpg"/>
+        <Viewbox>
+            <Canvas Width="650" Height="360">
+                <Button Template="{StaticResource arrow_button}"
+                        Height="50" Width="100"
+                        Canvas.Left="385" Canvas.Top="40"
+                        ToolTip="Перейти к &quot;Степени искрения&quot;"
+                        HorizontalAlignment="Center" Click="Forward"/>
+
+                <local:Node x:Name="root" Width="80" Height="80" 
+                            Canvas.Left="300" Canvas.Top="20"
+                            Title="Коммутация" MouseDown="ShowChildren">
+                    <local:Node.ToolTip>
+                        <TextBlock Margin="5" FontSize="20" Width="300" TextWrapping="Wrap">
+                            <Span Foreground="Blue" FontWeight="Bold">Коммутация</Span> - процесс переключения секции из одной параллельной ветви в другую и сопровождающие его явления
+                        </TextBlock>
+                    </local:Node.ToolTip>
+                </local:Node>
+                <local:Node x:Name="iroot" Width="30" Height="30" 
+                            Canvas.Left="327" Canvas.Top="75" Panel.ZIndex="2"
+                            Picture="{StaticResource info}"
+                            Visibility="{Binding Visibility, ElementName=root}"/>
+                <local:Arrow Width="150" Canvas.Left="310" Canvas.Top="80" 
+                             Length="130" Rotate="160"
+                             Visibility="{Binding Visibility, ElementName=l21}"/>
+                <local:Arrow Width="40" Canvas.Left="348" Canvas.Top="100" 
+                             Length="20" Rotate="90"
+                             Visibility="{Binding Visibility, ElementName=l22}"/>
+                <local:Arrow Width="150" Canvas.Left="375" Canvas.Top="70" 
+                             Length="130" Rotate="20"
+                             Visibility="{Binding Visibility, ElementName=l23}"/>
+
+
+
+                <local:Node x:Name="l21" Width="88" Height="80" 
+                            Canvas.Left="100" Canvas.Top="120" Visibility="Hidden"
+                            Title="Прямолинейная коммутация" MouseDown="ShowChildren"/>
+                <local:Node x:Name="i21" Width="30" Height="30" 
+                            Canvas.Left="127" Canvas.Top="175" Panel.ZIndex="2"
+                            Picture="{StaticResource info}"
+                            Text="2/text.txt" MouseDown="ShowInfo"
+                            Visibility="{Binding Visibility, ElementName=l21}"/>
+                <local:Arrow Width="60" Canvas.Left="147" Canvas.Top="200" 
+                             Length="40" Rotate="90"
+                             Visibility="{Binding Visibility, ElementName=l31}"/>
+
+                <local:Node x:Name="l22" Width="85" Height="80" 
+                            Canvas.Left="300" Canvas.Top="130" Visibility="Hidden"
+                            Title="Замедленная коммутация" MouseDown="ShowChildren"/>
+                <local:Node x:Name="i22" Width="30" Height="30" 
+                            Canvas.Left="327" Canvas.Top="185" Panel.ZIndex="2"
+                            Picture="{StaticResource info}"
+                            Text="3/text.txt" MouseDown="ShowInfo"
+                            Visibility="{Binding Visibility, ElementName=l22}"/>
+                <local:Arrow Width="50" Canvas.Left="348" Canvas.Top="210" 
+                             Length="30" Rotate="90"
+                             Visibility="{Binding Visibility, ElementName=l32}"/>
+
+                <local:Node x:Name="l23" Width="85" Height="80" 
+                            Canvas.Left="500" Canvas.Top="120" Visibility="Hidden"
+                            Title="Ускоренная коммутация" MouseDown="ShowChildren"/>
+                <local:Node x:Name="i23" Width="30" Height="30" 
+                            Canvas.Left="527" Canvas.Top="175" Panel.ZIndex="2"
+                            Picture="{StaticResource info}"
+                            Text="4/text.txt" MouseDown="ShowInfo"
+                            Visibility="{Binding Visibility, ElementName=l23}"/>
+                <local:Arrow Width="60" Canvas.Left="548" Canvas.Top="200" 
+                             Length="40" Rotate="90"
+                             Visibility="{Binding Visibility, ElementName=l33}"/>
+
+
+
+                <local:Node x:Name="l31" Width="85" Height="80" 
+                            Canvas.Left="100" Canvas.Top="250" Visibility="Hidden"
+                            Title="График изменения силы тока в процессе коммутации"
+                            Image="5/image.png" MouseDown="ShowInfo"/>
+                <local:Node x:Name="l32" Width="85" Height="80" 
+                            Canvas.Left="300" Canvas.Top="250" Visibility="Hidden"
+                            Title="График изменения силы тока в процессе коммутации"
+                            Image="6/image.png" MouseDown="ShowInfo"/>
+                <local:Node x:Name="l33" Width="85" Height="80" 
+                            Canvas.Left="500" Canvas.Top="250" Visibility="Hidden"
+                            Title="График изменения силы тока в процессе коммутации"
+                            Image="7/image.png" MouseDown="ShowInfo"/>
+            </Canvas>
+        </Viewbox>
+    </Grid>
+</Page>

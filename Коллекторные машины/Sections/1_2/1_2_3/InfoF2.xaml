@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="Коллекторные_машины.InfoF2"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Коллекторные_машины"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <ScrollViewer x:Name="scroll" FontSize="20" Margin="10" Padding="0 0 8 0">
+        <StackPanel>
+            <TextBlock TextWrapping="Wrap" TextAlignment="Justify">
+                    В<Span BaselineAlignment="Subscript" FontSize="15">ср</Span>
+                    – среднее значение магнитной индукции в воздушном зазоре, 
+                    определяемое по кривой распределения магнитного поля в воздушном зазоре под полюсом
+            </TextBlock>
+            <Image Source="pack://siteoforigin:,,,/Sections/1_2/1_2_3/chart.png"/>
+            <TextBlock Margin="10" TextWrapping="Wrap" HorizontalAlignment="Center"
+                   FontSize="40" FontStyle="Italic" Foreground="Black"
+                   FontFamily="Cambria Math">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock VerticalAlignment="Center">
+                            В<Span BaselineAlignment="Subscript" FontSize="20">ср</Span> =
+                        </TextBlock>
+                        <StackPanel Margin="5 0 0 5" VerticalAlignment="Center">
+                            <TextBlock HorizontalAlignment="Center">Ф</TextBlock>
+                            <Line X2="50" Stroke="Black"/>
+                            <TextBlock HorizontalAlignment="Center">τl</TextBlock>
+                        </StackPanel>
+                        
+                        <TextBlock Text="=" VerticalAlignment="Center"/>
+                        
+                        <StackPanel Margin="5 0 0 5" VerticalAlignment="Center">
+                            <TextBlock HorizontalAlignment="Center">Ф</TextBlock>
+                            <Line X2="150" Stroke="Black"/>
+                            <TextBlock HorizontalAlignment="Center">πDl/2p</TextBlock>
+                        </StackPanel>
+
+                    </StackPanel>
+            </TextBlock>
+            <TextBlock TextWrapping="Wrap" TextAlignment="Justify" Text="Ф – магнитный поток одного полюса; τ – полюсное деление; l – длина проводника, D – диаметр якоря, 2р – число полюсов"/>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

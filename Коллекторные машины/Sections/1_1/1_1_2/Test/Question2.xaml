@@ -1,0 +1,177 @@
+﻿<Page x:Class="Коллекторные_машины.Test112.Question2"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Коллекторные_машины"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Question2">
+
+    <Page.Resources>
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+        <Style TargetType="{x:Type Ellipse}">
+            <Setter Property="Stroke" Value="Yellow"/>
+            <Setter Property="StrokeThickness" Value="2"/>
+        </Style>
+        <Style TargetType="{x:Type Line}">
+            <Setter Property="Stroke" Value="Blue"/>
+            <Setter Property="StrokeThickness" Value="2"/>
+        </Style>
+
+        <Style x:Key="TextInBorder" TargetType="{x:Type Border}">
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="Margin" Value="0 0 0 5"/>
+            <Setter Property="Background" Value="Lavender"/>
+        </Style>
+    </Page.Resources>
+
+    <Grid Background="White">
+        <Grid.Resources>
+            <Style TargetType="{x:Type Border}">
+                <Setter Property="CornerRadius" Value="3"/>
+                <Setter Property="BorderBrush" Value="Blue"/>
+                <Setter Property="BorderThickness" Value="2"/>
+                <Setter Property="Panel.ZIndex" Value="2"/>
+                <Setter Property="Background" Value="White"/>
+            </Style>
+        </Grid.Resources>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="50px"/>
+        </Grid.RowDefinitions>
+
+        <Button Grid.Row="3" Margin="5" FontSize="20" Content="Проверить" Click="Check" Background="LightGreen"/>
+
+        <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Drop="Stack_Drop" AllowDrop="True">
+            <StackPanel x:Name="stack" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Border Style="{StaticResource TextInBorder}" MouseDown="Drag">
+                    <TextBlock Text="обмотка дополнительного магнитного полюса"/>
+                </Border>
+                <Border Style="{StaticResource TextInBorder}" MouseDown="Drag">
+                    <TextBlock Text="графитовые щетки"/>
+                </Border>
+                <Border Style="{StaticResource TextInBorder}" MouseDown="Drag">
+                    <TextBlock Text="сердечник дополнительного магнитного полюса"/>
+                </Border>
+                <Border Style="{StaticResource TextInBorder}" MouseDown="Drag">
+                    <TextBlock Text="сердечник главного магнитного полюса"/>
+                </Border>
+                <Border Style="{StaticResource TextInBorder}" MouseDown="Drag">
+                    <TextBlock Text="обмотка возбуждения"/>
+                </Border>
+                <Border Style="{StaticResource TextInBorder}" MouseDown="Drag">
+                    <TextBlock Text="корпус"/>
+                </Border>
+                <Border Style="{StaticResource TextInBorder}" MouseDown="Drag">
+                    <TextBlock Text="обмотка якоря"/>
+                </Border>
+                <Border Style="{StaticResource TextInBorder}" MouseDown="Drag">
+                    <TextBlock Text="сердечник якоря"/>
+                </Border>
+                <Border Style="{StaticResource TextInBorder}" MouseDown="Drag">
+                    <TextBlock Text="коллектор"/>
+                </Border>
+                <Border Style="{StaticResource TextInBorder}" MouseDown="Drag">
+                    <TextBlock Text="вал"/>
+                </Border>
+            </StackPanel>
+        </ScrollViewer>
+
+        <TextBlock Margin="20" FontSize="25" FontStyle="Italic" 
+                   Text="Установите соответствие между обозначением и названием частей машины постоянного тока*"/>
+        <TextBlock Margin="12" FontSize="25" FontStyle="Italic" Grid.Row="2"
+                   Text="*Удерживая зажатой ЛКМ перетащите элементы из левой панели на прямоугольные области на рисунке"/>
+
+        <Viewbox Grid.Column="1" Grid.RowSpan="4">
+            <Canvas Width="600" Height="480">
+                <Image Canvas.Left="130" Canvas.Top="80" Width="320"
+                       Source="pack://siteoforigin:,,,/Sections/1_1/1_1_2/Test/image2.jpg"/>
+
+                <Canvas x:Name="answers">
+                    <Canvas x:Name="c1">
+                        <Border Width="140" Canvas.Left="450" Canvas.Top="160" MouseDown="Drag">
+                            <TextBlock AllowDrop="True" Drop="TextBlock_Drop" FontSize="14"/>
+                        </Border>
+                        <Line X1="425" Y1="223" X2="500" Y2="170"/>
+                    </Canvas>
+
+                    <Canvas x:Name="c2">
+                        <Border Width="150" Canvas.Left="425" Canvas.Top="60" MouseDown="Drag">
+                            <TextBlock AllowDrop="True" Drop="TextBlock_Drop" FontSize="14"/>
+                        </Border>
+                        <Ellipse Width="20" Height="30" Canvas.Left="307" Canvas.Top="227"/>
+                        <Line X1="325" Y1="240" X2="490" Y2="80"/>
+                    </Canvas>
+
+                    <Canvas x:Name="c3">
+                        <Border Width="140" Canvas.Left="450" Canvas.Top="280" MouseDown="Drag">
+                            <TextBlock AllowDrop="True" Drop="TextBlock_Drop" FontSize="14"/>
+                        </Border>
+                        <Line X1="420" Y1="240" X2="500" Y2="290"/>
+                    </Canvas>
+
+                    <Canvas x:Name="c4">
+                        <Border Width="120" Canvas.Left="290" Canvas.Top="10" MouseDown="Drag">
+                            <TextBlock AllowDrop="True" Drop="TextBlock_Drop" FontSize="14"/>
+                        </Border>
+                        <Line X1="370" Y1="20" X2="310" Y2="110"/>
+                    </Canvas>
+
+                    <Canvas x:Name="c5">
+                        <Border Width="130" Canvas.Left="140" Canvas.Top="20" MouseDown="Drag">
+                            <TextBlock AllowDrop="True" Drop="TextBlock_Drop" FontSize="14"/>
+                        </Border>
+                        <Line X1="210" Y1="40" X2="258" Y2="107"/>
+                    </Canvas>
+
+                    <Canvas x:Name="c6">
+                        <Border Width="120" Canvas.Left="10" Canvas.Top="70" MouseDown="Drag">
+                            <TextBlock AllowDrop="True" Drop="TextBlock_Drop" FontSize="14"/>
+                        </Border>
+                        <Line X1="70" Y1="90" X2="180" Y2="140"/>
+                    </Canvas>
+
+                    <Canvas x:Name="c7">
+                        <Border Width="120" Canvas.Left="0" Canvas.Top="170" MouseDown="Drag">
+                            <TextBlock AllowDrop="True" Drop="TextBlock_Drop" FontSize="14"/>
+                        </Border>
+                        <Line X1="70" Y1="190" X2="235" Y2="240"/>
+                    </Canvas>
+
+                    <Canvas x:Name="c8">
+                        <Border Width="120" Canvas.Left="20" Canvas.Top="330" MouseDown="Drag">
+                            <TextBlock AllowDrop="True" Drop="TextBlock_Drop" FontSize="14"/>
+                        </Border>
+                        <Line X1="70" Y1="350" X2="255" Y2="275"/>
+                    </Canvas>
+
+                    <Canvas x:Name="c9">
+                        <Border Width="150" Canvas.Left="80" Canvas.Top="420" MouseDown="Drag">
+                            <TextBlock AllowDrop="True" Drop="TextBlock_Drop" FontSize="14"/>
+                        </Border>
+                        <Line X1="130" Y1="440" X2="285" Y2="260"/>
+                    </Canvas>
+
+                    <Canvas x:Name="c10">
+                        <Border Width="150" Canvas.Left="390" Canvas.Top="400" MouseDown="Drag">
+                            <TextBlock AllowDrop="True" Drop="TextBlock_Drop" FontSize="14"/>
+                        </Border>
+                        <Line X1="420" Y1="400" X2="290" Y2="240"/>
+                    </Canvas>
+                </Canvas>
+            </Canvas>
+        </Viewbox>
+    </Grid>
+</Page>

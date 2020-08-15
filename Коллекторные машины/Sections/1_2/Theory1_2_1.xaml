@@ -1,0 +1,210 @@
+﻿<Page x:Class="Коллекторные_машины.Theory1_2_1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Коллекторные_машины"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Theory1_2_1">
+
+    <Page.Resources>
+        <BitmapImage x:Key="info" UriSource="pack://application:,,,/GlobalResources/Icons/info.png"/>
+        <BitmapImage x:Key="algorithm" UriSource="pack://application:,,,/GlobalResources/Icons/algorithm.png"/>
+        <BitmapImage x:Key="math" UriSource="pack://siteoforigin:,,,/Sections/1_2/1_2_1/Icons/math.png"/>
+        <BitmapImage x:Key="execute" UriSource="pack://siteoforigin:,,,/Sections/1_2/1_2_1/Icons/execute.png"/>
+        <BitmapImage x:Key="application" UriSource="pack://siteoforigin:,,,/Sections/1_2/1_2_1/Icons/application.png"/>
+    </Page.Resources>
+
+    <Grid x:Name="grid">
+        <Image Stretch="Fill" Source="pack://application:,,,/GlobalResources/backgrounds/board.jpg"/>
+        <Viewbox>
+            <Canvas Width="680" Height="360">
+                <Button Template="{StaticResource arrow_button}"
+                        Canvas.Left="385" Canvas.Top="40"
+                        ToolTip="Перейти к &quot;Уравнительные соединения обмоток якоря&quot;"
+                        Height="25" Width="50" Click="Forward"/>
+                <Button Template="{StaticResource arrow_button}"
+                        Canvas.Left="300" Canvas.Top="40"
+                        ToolTip="Перейти к &quot;ЭДС обмоток якоря, электромагнитный момент МПТ&quot;"
+                        Height="25" Width="50" Click="Back">
+                    <Button.RenderTransform>
+                        <ScaleTransform ScaleX="-1"/>
+                    </Button.RenderTransform>
+                </Button>
+                
+                <local:Node x:Name="root" Title="Обмотки якоря машины постоянного тока"
+                            Width="75" Height="75"
+                            Canvas.Left="305" Canvas.Top="20"
+                            MouseDown="ShowChildren"/>
+                <local:Node x:Name="iroot1" Width="20" Height="20"
+                            Canvas.Left="322.5" Canvas.Top="80"
+                            Picture="{StaticResource info}"/>
+                <local:Node x:Name="iroot2" Width="20" Height="20"
+                            Canvas.Left="342.5" Canvas.Top="80"
+                            ToolTip="видео &#34;Порядок построения обмоток&#34;"
+                            Picture="{StaticResource algorithm}"/>
+                <local:Arrow Width="220" Canvas.Left="340" Canvas.Top="65" 
+                             Length="200" Rotate="165"
+                             Visibility="{Binding Visibility, ElementName=l21}"/>
+                <local:Arrow Width="150" Canvas.Left="340" Canvas.Top="55" 
+                             Length="130" Rotate="145"
+                             Visibility="{Binding Visibility, ElementName=l22}"/>
+                <local:Arrow Width="78" Canvas.Left="320" Canvas.Top="70" 
+                             Length="58" Rotate="115"
+                             Visibility="{Binding Visibility, ElementName=l23}"/>
+                <local:Arrow Width="73" Canvas.Left="380" Canvas.Top="70" 
+                             Length="53" Rotate="65"
+                             Visibility="{Binding Visibility, ElementName=l24}"/>
+                <local:Arrow Width="155" Canvas.Left="340" Canvas.Top="40" 
+                             Length="135" Rotate="35"
+                             Visibility="{Binding Visibility, ElementName=l25}"/>
+                <local:Arrow Width="220" Canvas.Left="340" Canvas.Top="55" 
+                             Length="200" Rotate="15"
+                             Visibility="{Binding Visibility, ElementName=l26}"/>
+                
+                
+
+
+                <local:Node x:Name="l21" Title="Петлевая (параллельная)"
+                            Width="105" Height="80"
+                            Canvas.Left="50" Canvas.Top="110"
+                            MouseDown="ShowChildren" Visibility="Hidden"/>
+                <local:Node x:Name="i211" Width="20" Height="20"
+                            Canvas.Left="67" Canvas.Top="170"
+                            Picture="{StaticResource math}"
+                            ToolTip="Расчетные соотношения"
+                            Text="8/text.txt" MouseDown="ShowInfo"
+                            Visibility="{Binding Visibility,ElementName=l21}"/>
+                <local:Node x:Name="i212" Width="20" Height="20"
+                            Canvas.Left="85" Canvas.Top="170"
+                            Picture="{StaticResource execute}"
+                            ToolTip="Особенности выполнения"
+                            Text="9/text.txt" MouseDown="ShowInfo"
+                            Visibility="{Binding Visibility,ElementName=l21}"/>
+                <local:Node x:Name="i213" Width="20" Height="20"
+                            Canvas.Left="103" Canvas.Top="170"
+                            Picture="{StaticResource application}"
+                            ToolTip="Область применения"
+                            Text="10/text.txt" MouseDown="ShowInfo"
+                            Visibility="{Binding Visibility,ElementName=l21}"/>
+                <local:Node x:Name="i214" Width="20" Height="20"
+                            Canvas.Left="121" Canvas.Top="170"
+                            Picture="{StaticResource info}"
+                            Text="7/text.txt" Image="7/image.png" MouseDown="ShowInfo"
+                            Visibility="{Binding Visibility,ElementName=l21}"/>
+                <local:Arrow Width="70" Canvas.Left="110" Canvas.Top="190" 
+                             Length="50" Rotate="115"
+                             Visibility="{Binding Visibility, ElementName=l31}"/>
+                <local:Arrow Width="70" Canvas.Left="110" Canvas.Top="185" 
+                             Length="50" Rotate="65"
+                             Visibility="{Binding Visibility, ElementName=l32}"/>
+                
+
+                <local:Node x:Name="l22" Title="Волновая (последовательная)"
+                            Width="105" Height="80"
+                            Canvas.Left="155" Canvas.Top="130"
+                            Visibility="Hidden"/>
+                <local:Node x:Name="i221" Width="20" Height="20"
+                            Canvas.Left="172" Canvas.Top="190"
+                            Picture="{StaticResource math}"
+                            ToolTip="Расчетные соотношения"
+                            Text="14/text.txt" MouseDown="ShowInfo"
+                            Visibility="{Binding Visibility,ElementName=l22}"/>
+                <local:Node x:Name="i222" Width="20" Height="20"
+                            Canvas.Left="190" Canvas.Top="190"
+                            Picture="{StaticResource execute}"
+                            ToolTip="Особенности выполнения"
+                            Text="15/text.txt" MouseDown="ShowInfo"
+                            Visibility="{Binding Visibility,ElementName=l22}"/>
+                <local:Node x:Name="i223" Width="20" Height="20"
+                            Canvas.Left="208" Canvas.Top="190"
+                            Picture="{StaticResource application}"
+                            ToolTip="Область применения"
+                            Text="16/text.txt" MouseDown="ShowInfo"
+                            Visibility="{Binding Visibility,ElementName=l22}"/>
+                <local:Node x:Name="i224" Width="20" Height="20"
+                            Canvas.Left="226" Canvas.Top="190"
+                            Picture="{StaticResource info}" 
+                            Text="13/text.txt" Image="13/image.png" MouseDown="ShowInfo"
+                            Visibility="{Binding Visibility,ElementName=l22}"/>
+
+                <local:Node x:Name="l23" Title="Комбинированная (лягушачья)"
+                            Width="105" Height="80"
+                            Canvas.Left="240" Canvas.Top="130"
+                            Visibility="Hidden"/>
+                <local:Node x:Name="i231" Width="20" Height="20"
+                            Canvas.Left="257" Canvas.Top="190"
+                            Picture="{StaticResource math}"
+                            ToolTip="Расчетные соотношения"
+                            Text="18/text.txt" MouseDown="ShowInfo"
+                            Visibility="{Binding Visibility,ElementName=l23}"/>
+                <local:Node x:Name="i232" Width="20" Height="20"
+                            Canvas.Left="275" Canvas.Top="190"
+                            Picture="{StaticResource execute}"
+                            ToolTip="Особенности выполнения"
+                            Text="19/text.txt" MouseDown="ShowInfo"
+                            Visibility="{Binding Visibility,ElementName=l23}"/>
+                <local:Node x:Name="i233" Width="20" Height="20"
+                            Canvas.Left="293" Canvas.Top="190"
+                            Picture="{StaticResource application}"
+                            ToolTip="Область применения"
+                            Text="20/text.txt" MouseDown="ShowInfo"
+                            Visibility="{Binding Visibility,ElementName=l23}"/>
+                <local:Node x:Name="i234" Width="20" Height="20"
+                            Canvas.Left="311" Canvas.Top="190"
+                            Picture="{StaticResource info}" 
+                            Text="17/text.txt" Image="17/image.png" MouseDown="ShowInfo"
+                            Visibility="{Binding Visibility,ElementName=l23}"/>
+
+                <local:Node x:Name="l24" Title="Шаги обмотки по якорю"
+                            Width="105" Height="80"
+                            Canvas.Left="325" Canvas.Top="130"
+                            Visibility="Hidden"/>
+
+                <local:Node x:Name="l25" Title="Параметры обмотки"
+                            Width="105" Height="80"
+                            Canvas.Left="410" Canvas.Top="130"
+                            Visibility="Hidden"/>
+
+                <local:Node x:Name="l26" Title="Секции" 
+                            Width="105" Height="80"
+                            Canvas.Left="525" Canvas.Top="110"
+                            Visibility="Hidden" MouseDown="ShowChildren"/>
+                <local:Node x:Name="i261" Width="20" Height="20"
+                            Canvas.Left="567" Canvas.Top="170"
+                            Picture="{StaticResource info}" 
+                            Text="2/text.txt" MouseDown="ShowInfo"
+                            Visibility="{Binding Visibility, ElementName=l26}"/>
+                <local:Arrow Width="70" Canvas.Left="583" Canvas.Top="190" 
+                             Length="45" Rotate="115"
+                             Visibility="{Binding Visibility, ElementName=l33}"/>
+                <local:Arrow Width="70" Canvas.Left="580" Canvas.Top="185" 
+                             Length="50" Rotate="60"
+                             Visibility="{Binding Visibility, ElementName=l34}"/>
+
+
+
+                <local:Node x:Name="l31" Title="Простая" MouseDown="ShowInfo"
+                            Width="70" Height="70"
+                            Canvas.Left="10" Canvas.Top="230"
+                            Image="11/image.png"
+                            Visibility="Hidden"/>
+                <local:Node x:Name="l32" Title="Сложная" MouseDown="ShowInfo"
+                            Width="70" Height="70"
+                            Canvas.Left="130" Canvas.Top="230"
+                            Image="12/image.png"
+                            Visibility="Hidden"/>
+
+                <local:Node x:Name="l33" Title="Секция петлевой обмотки"
+                            Width="70" Height="70"
+                            Canvas.Left="485" Canvas.Top="230"
+                            Visibility="Hidden"/>
+                <local:Node x:Name="l34" Title="Секция волновой обмотки"
+                            Width="70" Height="70"
+                            Canvas.Left="605" Canvas.Top="230"
+                            Visibility="Hidden"/>
+            </Canvas>
+        </Viewbox>
+    </Grid>
+</Page>

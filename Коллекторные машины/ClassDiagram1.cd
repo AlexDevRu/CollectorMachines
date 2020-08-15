@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Коллекторные_машины.Arrow" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAABAAAAABgAAAAAAAoABAFAABAEAAAAAAgAAAIAA=</HashCode>
+      <FileName>Controls\Arrow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Коллекторные_машины.Node" BaseTypeListCollapsed="true">
+    <Position X="4" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAABAkEAAAOAEAAAAACAAQBAAAAABDAAgBAA=</HashCode>
+      <FileName>Controls\Node.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Коллекторные_машины.Section" BaseTypeListCollapsed="true">
+    <Position X="14.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgEAAAACAAAAAAAAAABAAAAAABAAAIAA=</HashCode>
+      <FileName>Controls\Section.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Коллекторные_машины.SectionItem" BaseTypeListCollapsed="true">
+    <Position X="14.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAGAAACAAAAAA=</HashCode>
+      <FileName>Controls\SectionItem.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Коллекторные_машины.VideoPlayer" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAIJAAAACCBAAKAAAIAgGAAACIBAABAAAABAAAIAA=</HashCode>
+      <FileName>Controls\VideoPlayer.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Коллекторные_машины.TextFromString" BaseTypeListCollapsed="true">
+    <Position X="12.75" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Glossary.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Коллекторные_машины.Glossary" BaseTypeListCollapsed="true">
+    <Position X="4" Y="7.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="Коллекторные_машины.Glossary.Concept">
+        <TypeIdentifier>
+          <NewMemberFileName>Glossary.xaml.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAABgAAA=</HashCode>
+      <FileName>Glossary.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Коллекторные_машины.SectionItemData">
+    <Position X="12.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MainPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Коллекторные_машины.MainPage" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABQAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>MainPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Коллекторные_машины.MainWindow" BaseTypeListCollapsed="true">
+    <Position X="11" Y="3.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="Коллекторные_машины.MainWindow.TaskData">
+        <TypeIdentifier>
+          <NewMemberFileName>MainWindow.xaml.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>EAAACAAAAABIAAEAAAAAAQEAAAAAQAAAAAAIAAAEAAY=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Коллекторные_машины.Base">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAQAAAFAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Models\Base.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Коллекторные_машины.FormulaParser">
+    <Position X="9.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAA=</HashCode>
+      <FileName>Models\FormulaParser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Коллекторные_машины.Helpers">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>Models\Helpers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Коллекторные_машины.InputFields" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACCAggAAACAAAAAIAAAIAAAADAAAIAAAAggAAAAERA=</HashCode>
+      <FileName>Models\InputFields.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Коллекторные_машины.NumericTextBox">
+    <Position X="9.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\NumericTextBox.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Коллекторные_машины.Theory1_1_1" BaseTypeListCollapsed="true">
+    <Position X="14.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAgAAEAAAAQABAAAAAAAAAAAAgAAAAAAAAAAAAI=</HashCode>
+      <FileName>Sections\1_1\Theory1_1_1.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Коллекторные_машины.Algorithm1_2_3" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TasksAlgorithms\Algorithm1_2_3.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Коллекторные_машины.SelfTasks" BaseTypeListCollapsed="true">
+    <Position X="16.25" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="Коллекторные_машины.SelfTasks.SelfTaskAnswer">
+        <TypeIdentifier>
+          <NewMemberFileName>TemplatesPages\SelfTasks.xaml.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Коллекторные_машины.SelfTasks.SameAnswers">
+        <TypeIdentifier>
+          <NewMemberFileName>TemplatesPages\SelfTasks.xaml.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Коллекторные_машины.SelfTasks.SelfTask">
+        <TypeIdentifier>
+          <NewMemberFileName>TemplatesPages\SelfTasks.xaml.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Коллекторные_машины.SelfTasks.MyTextBox">
+        <TypeIdentifier>
+          <NewMemberFileName>TemplatesPages\SelfTasks.xaml.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Коллекторные_машины.SelfTasks.MyStackPanel">
+        <TypeIdentifier>
+          <NewMemberFileName>TemplatesPages\SelfTasks.xaml.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AgAIAAAAAAAAAAAAAAACAAAQAAAAAEAAAAAKAAAAAAA=</HashCode>
+      <FileName>TemplatesPages\SelfTasks.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Коллекторные_машины.Answer">
+    <Position X="0.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAgAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>TemplatesPages\Task.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Коллекторные_машины.Formula">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAECAAAAAAAAAAAAIAAAAAAEAAACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TemplatesPages\Task.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Коллекторные_машины.TaskData">
+    <Position X="7.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAgAAAAAAIAAAAgAAAAAIAAAAAAIAAAIA=</HashCode>
+      <FileName>TemplatesPages\Task.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Коллекторные_машины.FormulaBorder">
+    <Position X="5.75" Y="2.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="Коллекторные_машины.FormulaBorder.STATUS">
+        <TypeIdentifier>
+          <NewMemberFileName>TemplatesPages\Task.xaml.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAICAgAAAAAAAAAAAAAAAAACAAABAAAAAAAAIgAEAA=</HashCode>
+      <FileName>TemplatesPages\Task.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Коллекторные_машины.Variant">
+    <Position X="9.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAEAAAAAABBAAAAAACEAAAAA=</HashCode>
+      <FileName>TemplatesPages\Test.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Коллекторные_машины.Question">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAEQAAAAAADAAQAAAAAAAAAA=</HashCode>
+      <FileName>TemplatesPages\Test.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Коллекторные_машины.Test" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAIAAAAAAAAAAAAAAQAAAAQAAAAAAEBAIAAAAAA=</HashCode>
+      <FileName>TemplatesPages\Test.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Коллекторные_машины.MyTextBlock">
+    <Position X="12.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAEAAAAA=</HashCode>
+      <FileName>TemplatesPages\TestQuestion.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Коллекторные_машины.TestQuestion" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAAAAAAAQAAAABAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>TemplatesPages\TestQuestion.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Коллекторные_машины.TextOrImage" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TemplatesPages\TextOrImageInfo.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Коллекторные_машины.TextWithImage" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TemplatesPages\TextWithImageInfo.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Коллекторные_машины.ImageFromString" BaseTypeListCollapsed="true">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Videoteka.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Коллекторные_машины.Videoteka" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="5.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="Коллекторные_машины.Videoteka.Video">
+        <TypeIdentifier>
+          <NewMemberFileName>Videoteka.xaml.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAEQAAAAAAAAAAgAAA=</HashCode>
+      <FileName>Videoteka.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Коллекторные_машины.Task" BaseTypeListCollapsed="true">
+    <Position X="12.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAIEAAgAAAIAAAABAAAAAAAAEgAAICBAAABAAEAAAAA=</HashCode>
+      <FileName>TemplatesPages\Task.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="Коллекторные_машины.ITestQuestion">
+    <Position X="11" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>TemplatesPages\ITestQuestion.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

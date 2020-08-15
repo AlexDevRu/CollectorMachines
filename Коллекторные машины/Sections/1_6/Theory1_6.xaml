@@ -1,0 +1,126 @@
+﻿<Page x:Class="Коллекторные_машины.Theory1_6"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:Коллекторные_машины"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Theory1_6" Loaded="Page_Loaded">
+
+    <Page.Resources>
+        <BitmapImage x:Key="info" UriSource="pack://application:,,,/GlobalResources/Icons/info.png"/>
+        <BitmapImage x:Key="pict" UriSource="pack://application:,,,/GlobalResources/Icons/pict.png"/>
+    </Page.Resources>
+
+    <Grid x:Name="grid">
+        <Image Stretch="Fill" Source="pack://application:,,,/GlobalResources/backgrounds/board.jpg"/>
+        <Viewbox Grid.Row="1" Grid.ColumnSpan="2">
+            <Canvas Width="680" Height="360">
+                <Button x:Name="forward" Template="{StaticResource arrow_button}"
+                        Canvas.Left="385" Canvas.Top="40"
+                        Height="25" Width="50" Click="Forward"/>
+                <Button x:Name="back" Template="{StaticResource arrow_button}"
+                        Canvas.Left="295" Canvas.Top="40"
+                        Height="25" Width="50" Click="Back">
+                    <Button.RenderTransform>
+                        <ScaleTransform ScaleX="-1"/>
+                    </Button.RenderTransform>
+                </Button>
+                
+                <local:Node x:Name="root" Width="105" Height="80"
+                            Canvas.Left="287.5" Canvas.Top="20"
+                            MouseDown="ShowChildren"/>
+                <local:Node x:Name="iroot" Width="20" Height="20" 
+                        Canvas.Left="330" Canvas.Top="85"
+                        Picture="{StaticResource pict}"
+                        Visibility="{Binding Visibility, ElementName=root}"
+                        Image="image.jpg" MouseDown="ShowInfo"/>
+                <local:Arrow Width="185" Canvas.Left="310" Canvas.Top="65" 
+                             Length="165" Rotate="165"
+                             Visibility="{Binding Visibility, ElementName=l21}"/>
+                <local:Arrow Width="65" Canvas.Left="340" Canvas.Top="105" 
+                             Length="45" Rotate="140"
+                             Visibility="{Binding Visibility, ElementName=l22}"/>
+                <local:Arrow Width="55" Canvas.Left="350" Canvas.Top="97" 
+                             Length="35" Rotate="45"
+                             Visibility="{Binding Visibility, ElementName=l23}"/>
+                <local:Arrow Width="175" Canvas.Left="375" Canvas.Top="55" 
+                             Length="155" Rotate="15"
+                             Visibility="{Binding Visibility, ElementName=l24}"/>
+
+
+
+
+                <local:Node x:Name="l21" Width="70" Height="70" 
+                            Canvas.Left="77" Canvas.Top="105" Visibility="Hidden"
+                            Title="Схема" MouseDown="ShowInfo"/>
+
+                <local:Node x:Name="l22" Width="70" Height="70" 
+                            Canvas.Left="224" Canvas.Top="110" Visibility="Hidden"
+                            Title="Достоинства и недостатки" MouseDown="ShowInfo"/>
+
+                <local:Node x:Name="l23" Width="88" Height="70" 
+                            Canvas.Left="369" Canvas.Top="110" Visibility="Hidden"
+                            Title="Характеристики" MouseDown="ShowChildren"/>
+                <local:Arrow Width="75" Canvas.Left="390" Canvas.Top="170" 
+                             Length="55" Rotate="135"
+                             Visibility="{Binding Visibility, ElementName=l31}"/>
+                <local:Arrow Width="75" Canvas.Left="445" Canvas.Top="165" 
+                             Length="55" Rotate="45"
+                             Visibility="{Binding Visibility, ElementName=l32}"/>
+
+                <local:Node x:Name="l24" Width="70" Height="70" 
+                            Canvas.Left="518" Canvas.Top="105" Visibility="Hidden"
+                            Title="Область применения" MouseDown="ShowInfo"/>
+
+
+
+                <local:Node x:Name="l31" Width="85" Height="70" 
+                            Canvas.Left="260" Canvas.Top="200" Visibility="Hidden"
+                            Title="Механическая характеристика" MouseDown="ShowChildren"/>
+                <local:Node x:Name="i31" Width="30" Height="30" 
+                        Canvas.Left="288" Canvas.Top="250"
+                        Picture="{StaticResource info}"
+                        Visibility="{Binding Visibility, ElementName=l31}"
+                        Text="text1.txt" MouseDown="ShowInfo"/>
+                <local:Arrow Width="65" Canvas.Left="310" Canvas.Top="273" 
+                             Length="45" Rotate="120"
+                             Visibility="{Binding Visibility, ElementName=l41}"/>
+                <local:Arrow Width="65" Canvas.Left="310" Canvas.Top="267" 
+                             Length="45" Rotate="60"
+                             Visibility="{Binding Visibility, ElementName=l42}"/>
+                <local:Node x:Name="l32" Width="85" Height="70" 
+                            Canvas.Left="482" Canvas.Top="200" Visibility="Hidden"
+                            Title="Электромеханическая характеристика" MouseDown="ShowChildren"/>
+                <local:Node x:Name="i32" Width="30" Height="30" 
+                        Canvas.Left="510" Canvas.Top="250"
+                        Picture="{StaticResource info}"
+                        Visibility="{Binding Visibility, ElementName=l32}"
+                        Text="text2.txt" MouseDown="ShowInfo"/>
+                <local:Arrow Width="65" Canvas.Left="530" Canvas.Top="270" 
+                             Length="45" Rotate="113"
+                             Visibility="{Binding Visibility, ElementName=l43}"/>
+                <local:Arrow Width="65" Canvas.Left="530" Canvas.Top="268" 
+                             Length="45" Rotate="58"
+                             Visibility="{Binding Visibility, ElementName=l44}"/>
+
+
+
+
+                <local:Node x:Name="l41" Width="85" Height="70" 
+                            Canvas.Left="200" Canvas.Top="280" Visibility="Hidden"
+                            Title="Уравнение механической характеристики" MouseDown="ShowInfo"/>
+                <local:Node x:Name="l42" Width="85" Height="70" 
+                            Canvas.Left="325" Canvas.Top="280" Visibility="Hidden"
+                            Title="График механической характеристики" MouseDown="ShowInfo"/>
+                <local:Node x:Name="l43" Width="85" Height="70" 
+                            Canvas.Left="425" Canvas.Top="280" Visibility="Hidden"
+                            Title="Уравнение электромеханической характеристики" MouseDown="ShowInfo"/>
+                <local:Node x:Name="l44" Width="85" Height="70" 
+                            Canvas.Left="547" Canvas.Top="280" Visibility="Hidden"
+                            Title="График электромеханической характеристики" MouseDown="ShowInfo"/>
+            </Canvas>
+        </Viewbox>
+    </Grid>
+</Page>

@@ -1,0 +1,69 @@
+﻿<UserControl x:Class="Коллекторные_машины.MechanicFormula"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Коллекторные_машины"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="FontFamily" Value="Cambria Math"/>
+            <Setter Property="FontSize" Value="50"/>
+            <Setter Property="FontStyle" Value="Italic"/>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="6*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Image Source="pack://application:,,,/GlobalResources/images/list.png"
+               Grid.RowSpan="3" Grid.ColumnSpan="3" Stretch="Fill" Margin="-40"/>
+        <Button x:Name="close"  VerticalAlignment="Top"
+                Grid.Row="1" Grid.Column="1"
+                HorizontalAlignment="Right" Width="50" Height="50"
+                Content="X" Style="{StaticResource close_button}"/>
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"
+                      HorizontalAlignment="Center" VerticalAlignment="Center"
+                      Grid.Row="1" Grid.Column="1">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="n" ToolTip="частота вращения двигателя" VerticalAlignment="Center"/>
+                <TextBlock Text="=" VerticalAlignment="Center"/>
+                <TextBlock Text="√" FontSize="100" VerticalAlignment="Center" />
+                <StackPanel Margin="0 0 7 0">
+                    <Line X1="30" Y1="3.2" Stroke="Black" StrokeThickness="6.6" X2="100" Y2="3.2"/>
+                    <TextBlock ToolTip="конструктивный коэффициент момента" HorizontalAlignment="Center"><Run Text="C"/><Span BaselineAlignment="Subscript" FontSize="20"><Run Text="M"/></Span></TextBlock>
+                    <Line X1="0" Stroke="Black" StrokeThickness="2" X2="100"/>
+                    <TextBlock HorizontalAlignment="Center">
+                    <Span ToolTip="конструктивный коэффициент ЭДС"><Run Text="C"/><Span BaselineAlignment="Subscript" FontSize="20"><Run Text="E"/></Span></Span><Span BaselineAlignment="Superscript" FontSize="20"><Run Text="2"/></Span><Span ToolTip="коэффициент пропорциональности между магнитным потоком Ф и током якоря Iя">k</Span>
+                    </TextBlock>
+                </StackPanel>
+                <StackPanel Margin="5 5 0 0">
+                    <TextBlock Text="U" HorizontalAlignment="Center" ToolTip="напряжение, подводимое к двигателю"/>
+                    <Line X1="0" Stroke="Black" StrokeThickness="2" X2="100" Margin="0 1 0 0"/>
+                    <TextBlock Text="√M" HorizontalAlignment="Center" ToolTip="электромагнитный момент" Margin="0 5 0 0"/>
+                </StackPanel>
+                <TextBlock VerticalAlignment="Center" Text=" - "/>
+                <StackPanel Margin="5 5 0 0">
+                    <TextBlock HorizontalAlignment="Center" ToolTip="сопротивление обмотки якоря">
+                    R<Span BaselineAlignment="Subscript" FontSize="20">Я</Span>
+                    </TextBlock>
+                    <Line X1="0" Stroke="Black" StrokeThickness="2" X2="100" Margin="0 1 0 0"/>
+                    <TextBlock  HorizontalAlignment="Center">
+                    <Span ToolTip="конструктивный коэффициент ЭДС">C<Span BaselineAlignment="Subscript" FontSize="20">E</Span></Span>
+                    <Span ToolTip="коэффициент пропорциональности между магнитным потоком Ф и током якоря Iя">k</Span>
+                    </TextBlock>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

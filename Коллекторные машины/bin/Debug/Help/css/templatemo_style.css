@@ -1,0 +1,343 @@
+.main-menu, .responsive-menu ul { 
+	padding: 0; 
+	margin: 0; 
+	list-style: none; 
+}
+
+body { 
+	font: 14px/1.85em 'Open Sans', Arial, Helvetice Neue, sans-serif; 
+	color: #777777; 
+	font-weight: 300; 
+	font-style: normal; 
+	-webkit-font-smoothing: antialiased; 
+	/* Fix for webkit rendering */ 
+	-webkit-text-size-adjust: 100%; 
+}
+
+a, a:hover, a:focus { 
+	text-decoration: none; 
+	-webkit-transition: all 150ms ease-in; 
+	-moz-transition: all 150ms ease-in; 
+	-o-transition: all 150ms ease-in; 
+	transition: all 150ms ease-in; 
+}
+
+h1, h2, h3, h4, h5, h6 { 
+	font-family: 'Open Sans', Arial, Helvetice Neue, sans-serif; 
+}
+
+*, *:before, *:after { 
+	-moz-box-sizing: border-box; 
+	-webkit-box-sizing: border-box; 
+	box-sizing: border-box; 
+}
+
+#main-content { 
+	float: right;
+	width: 77%;
+}
+
+.section-content { 
+	padding: 0 7%; 
+	margin-bottom: 100px; 
+}
+
+.section-title { 
+	border-top: 4px solid; 
+	margin-bottom: 60px; 
+}
+
+.section-title h2 { 
+	display: inline-block; 
+	padding: 20px 35px; 
+	color: white; 
+	text-transform: uppercase; 
+	font-weight: 300; 
+	margin: 0; 
+	font-size: 20px; 
+}
+
+#theory .section-title { 
+	border-color: #e09d1a;
+}
+
+#theory h2 { 
+	background-color: #e9b144; 
+}
+
+#step_by_step_tasks .section-title { 
+	border-color: #7c1fe5; 
+}
+
+#step_by_step_tasks h2 { 
+	background-color: #974dea; 
+}
+
+#self_tasks .section-title { 
+	border-color: #1dcb7c; 
+}
+
+#self_tasks h2 { 
+	background-color: #38e395; 
+}
+
+#tests .section-title { 
+	border-color: #cb1d62; 
+}
+
+#tests h2 { 
+	background-color: #e3387c; 
+}
+
+#videoteka .section-title { 
+	border-color: #5aa44c; 
+}
+
+#videoteka h2 { 
+	background-color: #7dd06c; 
+}
+
+#glossary .section-title { 
+	border-color: #bcbd44; 
+}
+
+#glossary h2 { 
+	background-color: #c7d837; 
+}
+
+
+
+#main-sidebar { 
+	float: left; 
+	width: 23%; 
+	height: 100%; 
+	position: fixed; 
+	background-color: #495054; 
+	color: white; 
+}
+
+.logo { 
+	margin: 0 0 30px 0; 
+	background-color: #38a9e3; 
+	padding: 25px 40px; 
+}
+
+
+.logo a h1 { 
+	text-transform: uppercase; 
+	font-size: 30px;
+	margin: 0;
+	font-weight: 800; 
+}
+
+.logo span { 
+	color: white; 
+	font-size: 15px; 
+}
+
+.main-menu { text-align: center; }
+.main-menu li { margin-bottom: 1px; }
+.main-menu li a { color: white; text-transform: uppercase; display: block; border-left: 4px solid; padding: 15px 30px; background-color: #383e41; -webkit-transition: all 150ms ease-in; -moz-transition: all 150ms ease-in; -o-transition: all 150ms ease-in; transition: all 150ms ease-in; }
+.main-menu li a:hover { background-color: #34393b; }
+
+li.home a { border-color: #38a9e3; }
+li.home a.active { color: #38a9e3; }
+
+li.theory a { border-color: #e9b144; }
+li.theory a.active { color: #e9b144; }
+
+li.step_by_step_tasks a { border-color: #974dea; }
+li.step_by_step_tasks a.active { color: #974dea; }
+
+li.self_tasks a { border-color: #38e395; }
+li.self_tasks a.active { color: #38e395; }
+
+li.tests a { border-color: #e3387c; }
+li.tests a.active { color: #e3387c; }
+
+li.videoteka a { border-color: #7dd06c; }
+li.videoteka a.active { color: #7dd06c; }
+
+li.glossary a { border-color: #c7d837; }
+li.glossary a.active { color: #c7d837; }
+
+a.menu-toggle-btn { width: 100%; height: 60px; background-color: #38a9e3; text-align: center; line-height: 60px; display: block; color: white; }
+a.menu-toggle-btn i { line-height: 60px; }
+
+.responsive-navigation { 
+	position: fixed;
+	width: 100%; 
+	display: block; 
+	z-index: 9999; 
+}
+
+.responsive-menu { 
+	display: none; 
+	background-color: #495054; 
+}
+
+.responsive-menu ul li a { 
+	color: white; 
+	text-transform: uppercase; 
+	display: block; 
+	padding: 20px; 
+	border-bottom: 1px solid #5a6267; 
+}
+
+
+.container-fluid img {
+	width: 100%; 
+	height: auto;
+}
+
+
+.welcome-text { 
+	padding: 20px; 
+	text-align: center; 
+}
+
+.welcome-text h2 { 
+	color: #38a9e3; 
+	font-weight: 600; 
+	text-transform: uppercase; 
+	font-size: 32px; 
+	margin-bottom: 20px;
+}
+
+.welcome-text p { 
+	color: #000;
+	text-align: left;
+	font-size: 15pt;
+}
+
+
+.our-story {
+	color: #000;
+	text-align: left;
+	font-size: 15pt;
+}
+
+.our-story h3 { 
+	color: #e9b144; 
+	font-weight: 300; 
+	text-transform: uppercase; 
+	font-size: 24px; 
+	margin: 0 0 20px 0; 
+}
+
+.story-image { 
+	margin-top: 30px; 
+	overflow: hidden; 
+}
+
+.story-image img { 
+	width: 100%; 
+	height: auto; 
+}
+
+.our-skills { 
+	color: #000;
+	text-align: left;
+	font-size: 15pt;
+}
+
+.our-skills h3 { 
+	color: #974dea; 
+	font-weight: 300; 
+	text-transform: uppercase; 
+	font-size: 24px; 
+	margin: 0 0 20px 0; 
+}
+
+.small_image {
+	display: block;
+	max-width: 300px;
+	margin: 0 auto;
+}
+
+
+
+.rounded {
+	counter-reset: li; 
+	list-style: none; 
+	font: 18px "Trebuchet MS", "Lucida Sans";
+	padding: 0;
+}
+.rounded li {
+	position: relative;
+	display: block;
+	padding: .8em .8em .8em 4em;
+	margin: .9em 0;
+	color: #444;
+	border-radius: .3em;
+	transition: .3s ease-out;
+}
+.rounded li:hover {
+	background: #E9E4E0;
+}
+
+.rounded li:hover:before {
+	transform: rotate(360deg);
+}
+
+.rounded li:before {
+	content: counter(li);
+	counter-increment: li;
+	position: absolute;
+	left: -1.3em;
+	top: 50%;
+	margin-top: -1.9em;
+	background: #91ff82;
+	height: 4em;
+	width: 4em;
+	line-height: 3.5em;
+	border: .3em solid white;
+	text-align: center;
+	font-weight: bold;
+	border-radius: 2em;
+	transition: all .3s ease-out;
+}
+
+.list_header {
+	font-size: 20px;
+	font-weight: 600;
+	text-transform: uppercase;
+	color: red;
+	margin-bottom: 20px;
+}
+
+span.highlight {
+	font-style: italic;
+	font-weight: 600;
+}
+
+#theory span.highlight {
+	color: #e49700;
+}
+
+#step_by_step_tasks span.highlight {
+	color: #974dea;
+}
+
+#tests span.highlight {
+	color: #e3387c;
+}
+
+#videoteka span.highlight {
+	color: #7dd06c;
+}
+
+#glossary span.highlight {
+	color: #7dd06c;
+}
+
+
+
+
+
+@media (max-width: 991px) { 
+  #main-content { width: 100%; }
+  #templatemo { 
+  	padding-top: 100px;
+  }
+}

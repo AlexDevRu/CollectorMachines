@@ -1,0 +1,89 @@
+﻿<UserControl x:Class="Коллекторные_машины.Mechanic"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Коллекторные_машины"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2.6*"/>
+            <ColumnDefinition Width="0.6*"/>
+            <ColumnDefinition Width="2.6*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+        <Image Source="pack://application:,,,/GlobalResources/images/notebook.png" Grid.ColumnSpan="5" Grid.RowSpan="3"/>
+        <Button x:Name="close" Grid.Column="4" VerticalAlignment="Top" 
+                HorizontalAlignment="Left" Width="50" Height="50"
+                Content="X" Style="{StaticResource close_button}"/>
+        
+        
+        
+        <Viewbox x:Name="viewbox" Grid.Row="1" Grid.Column="1" Panel.ZIndex="3">
+            <Canvas x:Name="canvas" Width="1000" Height="900">
+                <Image Source="pack://siteoforigin:,,,/Sections/1_6/1_6_2/22/image.png" 
+                       Width="1000"/>
+
+
+                <Path Stroke="Blue" StrokeThickness="6"
+                      Canvas.Top="155">
+                    <Path.Data>
+                        <PathGeometry>
+                            <PathFigure StartPoint="220,75">
+                                <ArcSegment Point="880,515" Size="1300,3200"></ArcSegment>
+                            </PathFigure>
+                        </PathGeometry>
+                    </Path.Data>
+                </Path>
+                <Path Stroke="Transparent" StrokeThickness="30"
+                      ToolTip="искусственная характеристика"
+                      Canvas.Top="155">
+                    <Path.Data>
+                        <PathGeometry>
+                            <PathFigure StartPoint="220,75">
+                                <ArcSegment Point="880,515" Size="1300,3200"></ArcSegment>
+                            </PathFigure>
+                        </PathGeometry>
+                    </Path.Data>
+                </Path>
+
+
+                <Path Stroke="Red" StrokeThickness="6"
+                      Canvas.Top="13">
+                    <Path.Data>
+                        <PathGeometry>
+                            <PathFigure StartPoint="180,75">
+                                <ArcSegment Point="880,515" Size="1300,2400"></ArcSegment>
+                            </PathFigure>
+                        </PathGeometry>
+                    </Path.Data>
+                </Path>
+                <Path Stroke="Transparent" StrokeThickness="30"
+                      ToolTip="естественная характеристика"
+                      Canvas.Top="13">
+                    <Path.Data>
+                        <PathGeometry>
+                            <PathFigure StartPoint="180,75">
+                                <ArcSegment Point="880,515" Size="1300,2400"></ArcSegment>
+                            </PathFigure>
+                        </PathGeometry>
+                    </Path.Data>
+                </Path>
+            </Canvas>
+        </Viewbox>
+        <ScrollViewer Grid.Row="1" Grid.Column="3" VerticalScrollBarVisibility="Auto" Padding="0 0 8 0">
+            <TextBlock TextWrapping="Wrap" FontSize="20" TextAlignment="Justify">
+                &#160;&#160;&#160;Резко падающие кривые механических характеристик (естественная и искусственная) обеспечивают двигателю последовательного возбуждения устойчивую работу при любой механической нагрузке.
+            </TextBlock>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

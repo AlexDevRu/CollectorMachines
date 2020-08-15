@@ -1,0 +1,103 @@
+﻿<Page x:Class="Коллекторные_машины.Theory1_3_2"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Коллекторные_машины"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Theory1_3_2">
+
+    <Grid x:Name="grid">
+        <Image Stretch="Fill" Source="pack://application:,,,/GlobalResources/backgrounds/board.jpg"/>
+        <Viewbox>
+            <Canvas Width="680" Height="360">
+                <Button Template="{StaticResource arrow_button}"
+                        Canvas.Left="300" Canvas.Top="40"
+                        ToolTip="Перейти к &quot;Участки магнитной цепи МПТ&quot;"
+                        Height="25" Width="50" Click="Back">
+                    <Button.RenderTransform>
+                        <ScaleTransform ScaleX="-1"/>
+                    </Button.RenderTransform>
+                </Button>
+
+                <local:Node x:Name="root" Width="70" Height="70"
+                            Canvas.Left="305" Canvas.Top="20"
+                            Title="Реакция якоря" MouseDown="ShowChildren">
+                    <local:Node.ToolTip>
+                        <TextBlock TextWrapping="Wrap" Width="300" FontSize="20">
+                            <Span Foreground="Blue" FontWeight="Bold">Реакция якоря</Span> - воздействие магнитного поля, созданного током якоря, на магнитное поле главных полюсов.
+                        </TextBlock>
+                    </local:Node.ToolTip>
+                </local:Node>
+                <local:Arrow Width="220" Canvas.Left="340" Canvas.Top="65" 
+                             Length="200" Rotate="167"
+                             Visibility="{Binding Visibility, ElementName=l21}"/>
+                <local:Arrow Width="40" Canvas.Left="345" Canvas.Top="80" 
+                             Length="20" Rotate="90"
+                             Visibility="{Binding Visibility, ElementName=l22}"/>
+                <local:Arrow Width="220" Canvas.Left="340" Canvas.Top="55" 
+                             Length="200" Rotate="13"
+                             Visibility="{Binding Visibility, ElementName=l23}"/>
+
+
+
+                <local:Node x:Name="l21" Width="85" Height="80"
+                            Canvas.Left="72.5" Canvas.Top="110"
+                            Title="Механизм возникновения реакции якоря"
+                            Visibility="Hidden"/>
+
+                <local:Node x:Name="l22" Width="75" Height="75"
+                            Canvas.Left="305" Canvas.Top="110"
+                            Title="Способы устранения реакции якоря"
+                            Visibility="Hidden" MouseDown="ShowChildren"/>
+                <local:Arrow Width="70" Canvas.Left="350" Canvas.Top="180" 
+                             Length="50" Rotate="120"
+                             Visibility="{Binding Visibility, ElementName=l31}"/>
+                <local:Arrow Width="70" Canvas.Left="348" Canvas.Top="176" 
+                             Length="50" Rotate="58"
+                             Visibility="{Binding Visibility, ElementName=l32}"/>
+                <local:Arrow Width="130" Canvas.Left="350" Canvas.Top="180" 
+                             Length="110" Rotate="103"
+                             Visibility="{Binding Visibility, ElementName=l33}"/>
+                <local:Arrow Width="130" Canvas.Left="350" Canvas.Top="180" 
+                             Length="105" Rotate="75"
+                             Visibility="{Binding Visibility, ElementName=l34}"/>
+
+                <local:Node x:Name="l23" Width="85" Height="80"
+                            Canvas.Left="522.5" Canvas.Top="110"
+                            Title="Последствия возникновения реакции якоря"
+                            Text="3/text.txt"
+                            MouseDown="ShowInfo"
+                            Visibility="Hidden"/>
+
+
+
+                <local:Node x:Name="l31" Width="90" Height="80"
+                            Canvas.Left="230" Canvas.Top="190"
+                            Title="Использование дополнительных магнитных полюсов"
+                            Text="4/text.txt" Image="4/image.png"
+                            MouseDown="ShowInfo"
+                            Visibility="Hidden"/>
+                <local:Node x:Name="l32" Width="80" Height="80"
+                            Canvas.Left="375" Canvas.Top="190"
+                            Title="Увеличение воздушного зазора под главными полюсами"
+                            Text="5/text.txt"
+                            MouseDown="ShowInfo"
+                            Visibility="Hidden"/>
+                <local:Node x:Name="l33" Width="100" Height="80"
+                            Canvas.Left="225" Canvas.Top="275"
+                            Title="Использование компенсационной обмотки" HorizontalAlignment="Right"
+                            Text="6/text.txt" Image="6/image.png"
+                            MouseDown="ShowInfo"
+                            Visibility="Hidden"/>
+                <local:Node x:Name="l34" Width="85" Height="80"
+                            Canvas.Left="372.5" Canvas.Top="275"
+                            Title="Использование анизотропной стали" HorizontalAlignment="Left"
+                            Text="7/text.txt" Image="7/image.png"
+                            MouseDown="ShowInfo"
+                            Visibility="Hidden"/>
+            </Canvas>
+        </Viewbox>
+    </Grid>
+</Page>
